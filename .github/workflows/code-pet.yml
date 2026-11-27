@@ -1,0 +1,63 @@
+name: Code Pet
+
+# Regenerates the profile SVGs from live GitHub data.
+# Runs daily and on demand, and commits only when a file actually changed.
+
+on:
+  schedule:
+    # 06:10 UTC daily. GitHub queues cron runs, so the exact minute drifts.
+    - cron: "10 6 * * *"
+  workflow_dispatch:
+
+# Least privilege: the job only needs to push the regenerated assets back.
+permissions:
+  contents: write
+
+concurrency:
+  group: code-pet
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # generate.py uses only the standard library, so there is nothing
+      # to install and no lockfile to drift.
+
+      - name: Generate the pet SVGs
+        env:
+          # A classic PAT with the read:user scope, if one has been added.
+          # The built-in GITHUB_TOKEN is tried next; it can read the GraphQL
+          # API but frequently cannot read a user's contributionsCollection,
+          # in which case generate.py exits with an explanatory message.
+          CODE_PET_TOKEN: ${{ secrets.CODE_PET_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate.py --check
+
+      - name: Commit only if something changed
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- assets; then
+            echo "No change in assets/ - nothing to commit."
+            exit 0
+          fi
+
+          echo "Changed files:"
+          git diff --stat -- assets
+
+          git add assets
+          git commit -m "Update Code Pet assets ($(date -u +'%Y-%m-%d'))"
+          git push

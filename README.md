@@ -1,21 +1,6 @@
-<div align="center">
+<a href="https://muzraporfolio.vercel.app/"><img src="assets/hero.svg" alt="Code Pet. Muzra Fatima, Aspiring AI/ML Engineer. A fluffy cream cat mascot floating in a glowing cyan ring on a starfield." width="100%" /></a>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1020,45:5B6CFF,75:7C5CFF,100:5EE1FF&height=190&section=header&text=Muzra%20Fatima&fontSize=62&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=Aspiring%20AI%2FML%20Engineer%20%C2%B7%20Generative%20AI%20%C2%B7%20Intelligent%20Systems&descAlignY=58&descSize=16" alt="Muzra Fatima — Aspiring AI/ML Engineer, Generative AI, Intelligent Systems" width="100%" />
-
-<a href="https://github.com/MuzraFatima">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3400&pause=800&color=5EE1FF&center=true&vCenter=true&width=780&lines=Final-year+B.Tech+in+AI+%26+Machine+Learning;LLM+routing%2C+multi-agent+systems%2C+interpretability;I+build+research+systems+that+ship+with+their+numbers" alt="Final-year B.Tech in AI and Machine Learning; LLM routing, multi-agent systems, interpretability; I build research systems that ship with their numbers" />
-</a>
-
-<p>
-  <a href="https://muzraporfolio.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0B1020?style=for-the-badge&logo=vercel&logoColor=5EE1FF&labelColor=0B1020" alt="Portfolio" /></a>
-  <a href="https://www.linkedin.com/in/muzra-fatima-7150452bb/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2EyLjA2MiAyLjA2MiAwIDAxLTIuMDYzLTIuMDY1IDIuMDY0IDIuMDY0IDAgMTEyLjA2MyAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyNSAweiIvPjwvc3ZnPg==" alt="LinkedIn" /></a>
-  <a href="mailto:muzrafatima@gmail.com"><img src="https://img.shields.io/badge/Email-C5221F?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <img src="https://komarev.com/ghpvc/?username=MuzraFatima&style=for-the-badge&color=5EE1FF&label=PROFILE+VIEWS" alt="Profile views" />
-</p>
-
-</div>
-
----
+<img src="assets/about.svg" alt="About Me: final-year B.Tech student in Artificial Intelligence and Machine Learning, based in Telangana, India, who builds LLM-powered multi-agent systems, cost-aware model routing and mechanistic interpretability tooling." width="100%" />
 
 ## 👋 About me
 
@@ -28,98 +13,27 @@ Final-year **B.Tech student in Artificial Intelligence & Machine Learning** base
 - 📄 **Published** in *HBRP Publication* (2025) and **winner** of the Smart India Hackathon 2026 internal round.
 - 🎯 **Looking for** an entry-level AI/ML or Generative AI engineering role.
 
-<br />
+<img src="assets/tech.svg" alt="Tech stack pills: Python, Java, C, SQLite, PostgreSQL, PyTorch, scikit-learn, NumPy, pandas, SciPy, Matplotlib, Seaborn, Anthropic Claude, OpenAI, Gemini, Hugging Face, Groq, LiteLLM, RAG, Multi-agent systems, FastAPI, Node.js, Docker, SQLAlchemy, Jupyter, REST APIs, WebSockets, TypeScript, React, Tailwind CSS, Vite, three.js, Git, GitHub, GitHub Actions, VS Code, Linux, pytest, Ruff, pre-commit, DVC." width="100%" />
 
 ## 🛠️ Tech stack
 
-<table>
-<tr>
-<td valign="top" width="50%">
+**Languages & core** — Python · Java · C · SQLite · PostgreSQL
 
-**Languages & core**
+**AI / ML** — PyTorch · scikit-learn · NumPy · pandas · SciPy · Matplotlib · Seaborn
 
-<img src="https://skillicons.dev/icons?i=python,java,c,sqlite,postgres&theme=dark" alt="Python, Java, C, SQLite, PostgreSQL" />
+**LLM & agentic AI** — Anthropic Claude · OpenAI · Gemini · Hugging Face · Groq · LiteLLM · RAG · Multi-agent systems
 
-**AI / ML**
+**Backend & data** — FastAPI · Node.js · Docker · SQLAlchemy · Jupyter · REST APIs · WebSockets
 
-<p>
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
-<img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn" />
-<img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
-<img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" />
-<img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy" />
-<img src="https://img.shields.io/badge/Matplotlib-11557C?style=flat-square" alt="Matplotlib" />
-<img src="https://img.shields.io/badge/Seaborn-4C6E94?style=flat-square" alt="Seaborn" />
-</p>
+**Frontend** — TypeScript · React · Tailwind CSS · Vite · three.js
 
-**LLM & agentic AI**
-
-<p>
-<img src="https://img.shields.io/badge/Anthropic_Claude-D97757?style=flat-square&logo=anthropic&logoColor=white" alt="Anthropic Claude" />
-<img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square" alt="OpenAI" />
-<img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" alt="Google Gemini" />
-<img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" />
-<img src="https://img.shields.io/badge/Groq-F55036?style=flat-square" alt="Groq" />
-<img src="https://img.shields.io/badge/LiteLLM-4B32C3?style=flat-square" alt="LiteLLM" />
-<img src="https://img.shields.io/badge/RAG-0B1020?style=flat-square" alt="RAG" />
-<img src="https://img.shields.io/badge/Multi--Agent_Systems-1F6F5C?style=flat-square" alt="Multi-agent systems" />
-</p>
-
-</td>
-<td valign="top" width="50%">
-
-**Backend & data**
-
-<img src="https://skillicons.dev/icons?i=fastapi,nodejs,docker&theme=dark" alt="FastAPI, Node.js, Docker" />
-
-<p>
-<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy" />
-<img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter" />
-<img src="https://img.shields.io/badge/REST_APIs-005571?style=flat-square" alt="REST APIs" />
-<img src="https://img.shields.io/badge/WebSockets-1F2A44?style=flat-square" alt="WebSockets" />
-</p>
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=ts,react,tailwind,vite,threejs&theme=dark" alt="TypeScript, React, Tailwind CSS, Vite, three.js" />
-
-**Tooling & practice**
-
-<img src="https://skillicons.dev/icons?i=git,github,githubactions,vscode,linux&theme=dark" alt="Git, GitHub, GitHub Actions, VS Code, Linux" />
-
-<p>
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" />
-<img src="https://img.shields.io/badge/Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=black" alt="Ruff" />
-<img src="https://img.shields.io/badge/pre--commit-FAB040?style=flat-square&logo=precommit&logoColor=black" alt="pre-commit" />
-<img src="https://img.shields.io/badge/DVC-13ADC7?style=flat-square&logo=dvc&logoColor=white" alt="DVC" />
-</p>
-
-</td>
-</tr>
-</table>
-
-<br />
+**Tooling & practice** — Git · GitHub · GitHub Actions · VS Code · Linux · pytest · Ruff · pre-commit · DVC
 
 ## 🚀 Flagship AI/ML work
 
 > The four projects I would most like to be judged on. Every number below is produced by the code in its repository.
 
-<div align="center">
-  <a href="https://github.com/MuzraFatima/HorizonGuard">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=MuzraFatima&repo=HorizonGuard&bg_color=0B1020&title_color=5EE1FF&text_color=C9D1D9&icon_color=C084FC&border_color=1F2A44&show_owner=false" alt="HorizonGuard repository" />
-  </a>
-  <a href="https://github.com/MuzraFatima/NeuroLens">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=MuzraFatima&repo=NeuroLens&bg_color=0B1020&title_color=5EE1FF&text_color=C9D1D9&icon_color=C084FC&border_color=1F2A44&show_owner=false" alt="NeuroLens / TopoCircuit-SAE repository" />
-  </a>
-  <a href="https://github.com/MuzraFatima/Compute-bazar">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=MuzraFatima&repo=Compute-bazar&bg_color=0B1020&title_color=5EE1FF&text_color=C9D1D9&icon_color=C084FC&border_color=1F2A44&show_owner=false" alt="Compute Bazaar repository" />
-  </a>
-  <a href="https://github.com/MuzraFatima/AstroLM">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=MuzraFatima&repo=AstroLM&bg_color=0B1020&title_color=5EE1FF&text_color=C9D1D9&icon_color=C084FC&border_color=1F2A44&show_owner=false" alt="AstroLM repository" />
-  </a>
-</div>
-
-<br />
+<a href="https://github.com/MuzraFatima/HorizonGuard"><img src="assets/project-horizonguard.svg" alt="HorizonGuard: recoverability-aware early warning for long-horizon agents. Violation rate 65 percent to 10 percent against a 40 percent probability-only alarm." width="100%" /></a>
 
 ### 🛡️ [HorizonGuard](https://github.com/MuzraFatima/HorizonGuard) — recoverability-aware early warning for long-horizon agents
 
@@ -135,7 +49,7 @@ Multi-state hazard modelling · counterfactual fork labels · conformal risk con
 
 <sub><code>Python</code> · <code>NumPy/SciPy</code> · <code>TypeScript</code> dashboard · <code>DVC</code> · <code>Docker</code> · <code>pre-commit</code> · CI</sub>
 
-<br />
+<a href="https://github.com/MuzraFatima/NeuroLens"><img src="assets/project-neurolens.svg" alt="NeuroLens slash TopoCircuit-SAE: multi-parent feature absorption in sparse autoencoders. MPAbs benchmark and DR-SAE on real Pythia-70M activations, CPU only." width="100%" /></a>
 
 ### 🔍 [NeuroLens / TopoCircuit-SAE](https://github.com/MuzraFatima/NeuroLens) — multi-parent feature absorption in sparse autoencoders
 
@@ -145,7 +59,7 @@ Seven SAEs of width 2,048 trained on the same 857,504 tokens · absorption, fide
 
 <sub><code>Python</code> · <code>PyTorch</code> · mechanistic interpretability · AIML capstone</sub>
 
-<br />
+<a href="https://github.com/MuzraFatima/Compute-bazar"><img src="assets/project-compute-bazaar.svg" alt="Compute Bazaar: a combinatorial compute market for agents that do not know their own value. Risk-adjusted XOR menus reach 78.0 percent of oracle welfare." width="100%" /></a>
 
 ### ⚖️ [Compute Bazaar](https://github.com/MuzraFatima/Compute-bazar) — a combinatorial compute market for agents that don't know their own value
 
@@ -161,7 +75,7 @@ Getting the Clarke pivot right matters: the common per-bid shortcut was exploita
 
 <sub><code>Python</code> · <code>FastAPI</code> · WebSocket dashboard · live Groq LLM bidders · <code>Docker</code> · 27 end-to-end checks</sub>
 
-<br />
+<a href="https://github.com/MuzraFatima/AstroLM"><img src="assets/project-astrolm.svg" alt="AstroLM: a decoder-only language model built from scratch, and what it memorizes. The 29.4M model reaches 1.060 test bits per byte, 23 percent below a 5-gram baseline." width="100%" /></a>
 
 ### 🌌 [AstroLM](https://github.com/MuzraFatima/AstroLM) — a decoder-only LM built from scratch, and what it memorizes
 
@@ -175,56 +89,53 @@ Hypotheses and thresholds were fixed in advance, and the four that were **not** 
 
 <sub><code>Python</code> · <code>PyTorch</code> · custom tokenizer · bit-exact resumable training · local-only web UI</sub>
 
-<br />
-
 ## 📂 More projects
 
-| Project | What it does | Stack |
-| :-- | :-- | :-- |
-| **[WhoToTrust](https://github.com/MuzraFatima/WhoToTrust)** | When annotators disagree, is it a mistake or a real difference of opinion? **LabelTriage** decides vote by vote, then trains on each kind differently. Ships the **AmbiNoise** benchmark (CIFAR-10H, ChaosNLI) and a vote-level explorer. | `Python` · `React` · CI |
-| **[Cost-Aware Agent Router](https://github.com/MuzraFatima/Cost-aware-agent)** | Confidence-based multi-tier LLM routing: start at the cheapest capable tier, escalate only when confidence is insufficient. **85.3% evaluated cost savings**, with token-level accounting and auditable routing paths. | `Python` · `FastAPI` · `LiteLLM` · `SQLite` |
-| **[JOCKY Forensics](https://github.com/MuzraFatima/jocky-forensics)** | A domain-specific **programming language for digital forensics** — compiler, read-only policy checker, cross-platform evidence engine with tamper-evident sealing, and a web dashboard. Built for SIH 2026 (SIH26148). **540 tests passing.** [Live demo →](https://jocky-forensic.netlify.app) | `Python` · `JavaScript` · `Docker` |
-| **[PhoneCheck](https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction)** | Smartphone-addiction risk prediction across **nine models** (logistic regression through XGBoost, LightGBM and a stacking ensemble) with 5-fold cross-validation and a feature-ablation study. The basis of my published paper. | `Python` · `scikit-learn` · `FastAPI` |
-| **[Portfolio — The Galaxy of Intelligence](https://github.com/MuzraFatima/portfolio)** | An explorable 3D portfolio: a galaxy built from real NASA, ESA and ESO imagery, where each project is a planet you can fly to. Fully readable without WebGL. [Live →](https://muzraporfolio.vercel.app/) | `React 19` · `TypeScript` · `three.js` · `Vite` |
+<a href="https://github.com/MuzraFatima/WhoToTrust"><img src="assets/project-whototrust.svg" alt="WhoToTrust: LabelTriage decides, vote by vote, whether a disagreement is an error or a real difference of opinion." width="100%" /></a>
 
-<br />
+**[WhoToTrust](https://github.com/MuzraFatima/WhoToTrust)** — When annotators disagree, is it a mistake or a real difference of opinion? **LabelTriage** decides vote by vote, then trains on each kind differently. Ships the **AmbiNoise** benchmark (CIFAR-10H, ChaosNLI) and a vote-level explorer. <sub>`Python` · `React` · CI</sub>
+
+<a href="https://github.com/MuzraFatima/Cost-aware-agent"><img src="assets/project-caar.svg" alt="Cost-Aware Agent Router: confidence-based multi-tier LLM routing with 85.3 percent evaluated cost savings." width="100%" /></a>
+
+**[Cost-Aware Agent Router](https://github.com/MuzraFatima/Cost-aware-agent)** — Confidence-based multi-tier LLM routing: start at the cheapest capable tier, escalate only when confidence is insufficient. **85.3% evaluated cost savings**, with token-level accounting and auditable routing paths. <sub>`Python` · `FastAPI` · `LiteLLM` · `SQLite`</sub>
+
+<a href="https://github.com/MuzraFatima/jocky-forensics"><img src="assets/project-jocky.svg" alt="JOCKY Forensics: a domain-specific programming language for digital forensics, with 540 tests passing." width="100%" /></a>
+
+**[JOCKY Forensics](https://github.com/MuzraFatima/jocky-forensics)** — A domain-specific **programming language for digital forensics** — compiler, read-only policy checker, cross-platform evidence engine with tamper-evident sealing, and a web dashboard. Built for SIH 2026 (SIH26148). **540 tests passing.** [Live demo →](https://jocky-forensic.netlify.app) <sub>`Python` · `JavaScript` · `Docker`</sub>
+
+<a href="https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction"><img src="assets/project-phonecheck.svg" alt="PhoneCheck: smartphone-addiction risk prediction across nine models." width="100%" /></a>
+
+**[PhoneCheck](https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction)** — Smartphone-addiction risk prediction across **nine models** (logistic regression through XGBoost, LightGBM and a stacking ensemble) with 5-fold cross-validation and a feature-ablation study. The basis of my published paper. <sub>`Python` · `scikit-learn` · `FastAPI`</sub>
+
+<a href="https://github.com/MuzraFatima/portfolio"><img src="assets/project-portfolio.svg" alt="Portfolio, The Galaxy of Intelligence: an explorable 3D galaxy where each project is a planet you fly to." width="100%" /></a>
+
+**[Portfolio — The Galaxy of Intelligence](https://github.com/MuzraFatima/portfolio)** — An explorable 3D portfolio: a galaxy built from real NASA, ESA and ESO imagery, where each project is a planet you can fly to. Fully readable without WebGL. [Live →](https://muzraporfolio.vercel.app/) <sub>`React 19` · `TypeScript` · `three.js` · `Vite`</sub>
 
 ## 📊 GitHub activity
 
-<div align="center">
+<img src="assets/stats-contributions.svg" alt="Yearly contributions and the current pet stage, generated daily from the GitHub API." width="100%" />
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=MuzraFatima&show_icons=true&include_all_commits=true&count_private=true&bg_color=0B1020&title_color=5EE1FF&text_color=C9D1D9&icon_color=C084FC&border_color=1F2A44" alt="Muzra Fatima's GitHub statistics" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MuzraFatima&layout=compact&langs_count=8&bg_color=0B1020&title_color=5EE1FF&text_color=C9D1D9&border_color=1F2A44" alt="Most used languages" />
+<img src="assets/stats-languages.svg" alt="Top languages by bytes across owned repositories, generated daily from the GitHub API." width="100%" />
 
-<img src="https://streak-stats.demolab.com/?user=MuzraFatima&background=0B1020&stroke=1F2A44&border=1F2A44&ring=5EE1FF&fire=C084FC&currStreakLabel=5EE1FF&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=C9D1D9&dates=8B98B0" alt="GitHub contribution streak" />
+<img src="assets/stats-streak.svg" alt="A 13-week contribution streak, where a week counts when it has at least one contribution." width="100%" />
 
-<br /><br />
-
-<img src="https://ghchart.rshah.org/5EE1FF/MuzraFatima" alt="Muzra Fatima's GitHub contribution chart" width="92%" />
-
-</div>
-
-<br />
+<sub>The pet grows with the yearly contribution count — sleeping fluffball under 50, kitten to 199, young cat to 499, adult cat at 500 and above — and dozes off when there have been no contributions for seven days.</sub>
 
 ## 🏆 Achievements
+
+<img src="assets/achievements.svg" alt="Achievements: winner of Smart India Hackathon 2026 internal round with JOCKY Forensics; published research paper with HBRP Publication in 2025; two pre-registered research studies, AstroLM and HorizonGuard. Certification issuers: Anthropic, AWS Academy, Cisco Networking Academy, freeCodeCamp and TASK." width="100%" />
 
 - 🥇 **Winner — Smart India Hackathon 2026 (internal round)** with [JOCKY Forensics](https://github.com/MuzraFatima/jocky-forensics), a digital-forensics platform for problem statement SIH26148.
 - 📄 **Published research paper** — *Smartphone Usage to Addiction: A Predictive Approach Using Machine Learning*, HBRP Publication, 2025.
 - 🧪 **Two pre-registered research studies** (AstroLM, HorizonGuard), with negative results reported as planned.
 
-<br />
-
 ## 📜 Certifications
 
-<p>
-<img src="https://img.shields.io/badge/Anthropic-AI_Fluency_%C2%B7_Claude_API_%C2%B7_Agent_Skills-D97757?style=flat-square&logo=anthropic&logoColor=white" alt="Anthropic: AI Fluency, Claude with the Anthropic API, Introduction to Agent Skills" />
-<img src="https://img.shields.io/badge/AWS_Academy-GenAI_%C2%B7_ML_%C2%B7_NLP_%C2%B7_Data_Engineering-FF9900?style=flat-square" alt="AWS Academy: Generative AI Foundations, Machine Learning Foundations, Machine Learning for NLP, Data Engineering" />
-<img src="https://img.shields.io/badge/Cisco-Modern_AI_%C2%B7_Data_Science_%C2%B7_Python_%C2%B7_CCNA-1BA0D7?style=flat-square&logo=cisco&logoColor=white" alt="Cisco Networking Academy: Introduction to Modern AI, Introduction to Data Science, Python Essentials 2, CCNA Introduction to Networks" />
-<img src="https://img.shields.io/badge/freeCodeCamp-Scientific_Computing_with_Python-0A0A23?style=flat-square&logo=freecodecamp&logoColor=white" alt="freeCodeCamp: Scientific Computing with Python" />
-<img src="https://img.shields.io/badge/TASK-Frontend_with_HTML5_%26_CSS3-6C3BAA?style=flat-square" alt="Telangana Academy for Skill and Knowledge: Frontend Development with HTML5 and CSS3" />
-</p>
-
-<br />
+- **Anthropic** — AI Fluency: Framework & Foundations · AI Fluency for Students · Claude with the Anthropic API · Introduction to Agent Skills
+- **AWS Academy** — Generative AI Foundations · Machine Learning Foundations · Machine Learning for NLP · Data Engineering
+- **Cisco Networking Academy** — Introduction to Modern AI · Introduction to Data Science · Python Essentials 2 · Apply AI: Analyze Customer Reviews · CCNA: Introduction to Networks
+- **freeCodeCamp** — Scientific Computing with Python
+- **Telangana Academy for Skill and Knowledge (TASK)** — Frontend Development with HTML5 & CSS3
 
 ## 🎓 Education
 
@@ -233,24 +144,16 @@ Hypotheses and thresholds were fixed in advance, and the four that were **not** 
 | **B.Tech, Artificial Intelligence & Machine Learning** <br /> Jayaprakash Narayan College of Engineering | 2023 – 2027 <br /> CGPA **7.97** (through semester 3-2) |
 | **Intermediate (MPC)** <br /> ARK Junior College | **90.2%** |
 
-<br />
+## 💬 Let's talk
 
----
-
-<div align="center">
-
-### 💬 Let's talk
+<img src="assets/contact.svg" alt="Contact: email muzrafatima at gmail dot com, LinkedIn muzra-fatima, and the portfolio at muzraporfolio.vercel.app, with a waving cream cat." width="100%" />
 
 I'm looking for an **entry-level AI/ML or Generative AI engineering role**, and I'm always glad to talk about agents, routing and interpretability.
 
-<a href="mailto:muzrafatima@gmail.com"><img src="https://img.shields.io/badge/muzrafatima@gmail.com-C5221F?style=for-the-badge&logo=gmail&logoColor=white" alt="Email muzrafatima at gmail dot com" /></a>
-<a href="https://www.linkedin.com/in/muzra-fatima-7150452bb/"><img src="https://img.shields.io/badge/Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2EyLjA2MiAyLjA2MiAwIDAxLTIuMDYzLTIuMDY1IDIuMDY0IDIuMDY0IDAgMTEyLjA2MyAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyNSAweiIvPjwvc3ZnPg==" alt="Connect on LinkedIn" /></a>
-<a href="https://muzraporfolio.vercel.app/"><img src="https://img.shields.io/badge/View_Portfolio-0B1020?style=for-the-badge&logo=vercel&logoColor=5EE1FF&labelColor=0B1020" alt="View portfolio" /></a>
+- 📧 **Email** — [muzrafatima@gmail.com](mailto:muzrafatima@gmail.com)
+- 💼 **LinkedIn** — [muzra-fatima](https://www.linkedin.com/in/muzra-fatima-7150452bb/)
+- 🌐 **Portfolio** — [muzraporfolio.vercel.app](https://muzraporfolio.vercel.app/)
 
-<br /><br />
+---
 
-<sub>Building at the intersection of AI research and real, working systems.</sub>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:5EE1FF,25:7C5CFF,55:5B6CFF,100:0B1020&height=110&section=footer" alt="" width="100%" />
-
-</div>
+<sub>Building at the intersection of AI research and real, working systems. · The Code Pet above is generated daily from the GitHub GraphQL API by <a href="scripts/generate.py">scripts/generate.py</a>; all animation is CSS inside the SVGs, with no JavaScript, and it stops under <code>prefers-reduced-motion</code>.</sub>

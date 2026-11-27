@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 354" width="880" height="354" role="img" aria-labelledby="t d">
+  <title id="t">Tech stack</title>
+  <desc id="d">Rounded pills alternating cyan and yellow listing: Python, Java, C, SQLite, PostgreSQL, PyTorch, scikit-learn, NumPy, pandas, SciPy, Matplotlib, Seaborn, Anthropic Claude, OpenAI, Gemini, Hugging Face, Groq, LiteLLM, RAG, Multi-agent systems, FastAPI, Node.js, Docker, SQLAlchemy, Jupyter, REST APIs, WebSockets, TypeScript, React, Tailwind CSS, Vite, three.js, Git, GitHub, GitHub Actions, VS Code, Linux, pytest, Ruff, pre-commit, DVC</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071A33"/>
+      <stop offset="55%" stop-color="#0B2140"/>
+      <stop offset="100%" stop-color="#0E2A4D"/>
+    </linearGradient>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="58%" stop-color="#35D6FF" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#35D6FF" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="furGrad" cx="36%" cy="26%" r="80%">
+      <stop offset="0%" stop-color="#FFFBF2"/>
+      <stop offset="58%" stop-color="#FFF0D6"/>
+      <stop offset="100%" stop-color="#EDD5AE"/>
+    </radialGradient>
+    <radialGradient id="tailGrad" cx="30%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#FFF8EA"/>
+      <stop offset="65%" stop-color="#FFF0D6"/>
+      <stop offset="100%" stop-color="#E9CFA4"/>
+    </radialGradient>
+    <radialGradient id="irisGrad" cx="38%" cy="30%" r="74%">
+      <stop offset="0%" stop-color="#AEF2FF"/>
+      <stop offset="52%" stop-color="#35D6FF"/>
+      <stop offset="100%" stop-color="#0E7FAD"/>
+    </radialGradient>
+    <radialGradient id="cheekGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9FB2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FF9FB2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="sparkle" d="M0,-6 Q1.1,-1.1 6,0 Q1.1,1.1 0,6 Q-1.1,1.1 -6,0 Q-1.1,-1.1 0,-6 Z"/>
+    <g id="paw">
+      <ellipse cx="0" cy="2.6" rx="4.6" ry="3.7"/>
+      <ellipse cx="-4.4" cy="-2.6" rx="1.9" ry="2.5"/>
+      <ellipse cx="-1.5" cy="-4.4" rx="1.9" ry="2.5"/>
+      <ellipse cx="1.5" cy="-4.4" rx="1.9" ry="2.5"/>
+      <ellipse cx="4.4" cy="-2.6" rx="1.9" ry="2.5"/>
+    </g>
+    <g id="starBadge">
+      <path d="M0,-11 L3.2,-3.6 L11,-3.1 L5.1,2 L6.9,9.7 L0,5.6 L-6.9,9.7 L-5.1,2 L-11,-3.1 L-3.2,-3.6 Z"/>
+    </g>
+  </defs>
+  <style>
+    .f { font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+    .cat { animation: float 4.6s ease-in-out infinite; }
+    .tail { transform-box: fill-box; transform-origin: 8% 86%; animation: swish 3.4s ease-in-out infinite; }
+    .earL { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchL 7s ease-in-out infinite; }
+    .earR { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchR 7s ease-in-out infinite; }
+    .eye { transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5.8s ease-in-out infinite; }
+    .ringDash { animation: spin 26s linear infinite; }
+    .glowPulse { transform-box: fill-box; transform-origin: 50% 50%; animation: pulse 4.6s ease-in-out infinite; }
+    .breathe { transform-box: fill-box; transform-origin: 50% 90%; animation: breathe 3.8s ease-in-out infinite; }
+    .zz { transform-box: fill-box; transform-origin: 50% 100%; animation: zzz 3.4s ease-in-out infinite; }
+    .wave { transform-box: fill-box; transform-origin: 20% 90%; animation: wave 1.9s ease-in-out infinite; }
+    .stA, .stB, .stC { transform-box: fill-box; transform-origin: 50% 50%;
+                        animation: twinkle 3.6s ease-in-out infinite; }
+    .stB { animation-duration: 4.4s; animation-delay: -1.2s; }
+    .stC { animation-duration: 5.2s; animation-delay: -2.4s; }
+
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes swish { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
+    @keyframes blink { 0%,91%,100% { transform: scaleY(1); } 94% { transform: scaleY(0.08); } 97% { transform: scaleY(1); } }
+    @keyframes twitchL { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(8deg); } 94% { transform: rotate(-3deg); } }
+    @keyframes twitchR { 0%,88%,100% { transform: rotate(0); } 92% { transform: rotate(-9deg); } 96% { transform: rotate(3deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+    @keyframes zzz { 0% { opacity: 0; transform: translateY(4px) scale(.8); }
+                      35% { opacity: 1; }
+                      100% { opacity: 0; transform: translateY(-14px) scale(1.15); } }
+    @keyframes wave { 0%,100% { transform: rotate(-16deg); } 50% { transform: rotate(14deg); } }
+    @keyframes twinkle { 0%,100% { opacity: .5; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.2); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cat, .tail, .earL, .earR, .eye, .ringDash, .glowPulse,
+      .breathe, .zz, .wave, .stA, .stB, .stC { animation: none !important; }
+    }
+  </style>
+  <rect x="0" y="0" width="880" height="354" rx="24" fill="url(#bgGrad)"/>
+  <rect x="1.5" y="1.5" width="877" height="351" rx="22.5" fill="none" stroke="#35D6FF" stroke-opacity="0.22" stroke-width="3"/>
+  <text x="36" y="56" fill="#35D6FF" font-size="23" font-weight="700" class="f">Tech Stack</text>
+  <g transform="translate(176,49) scale(0.62)" fill="#FF9FB2" opacity=".9"><use href="#paw"/></g>
+  <g transform="translate(195,49) scale(0.62)" fill="#35D6FF" opacity=".9"><use href="#paw"/></g>
+  <g transform="translate(214,49) scale(0.62)" fill="#FFD54A" opacity=".9"><use href="#paw"/></g>
+  <g>
+    <rect x="36.0" y="86" width="77.0" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="74.5" y="105.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Python</text>
+  </g>
+  <g>
+    <rect x="122.0" y="86" width="61.3" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="152.6" y="105.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Java</text>
+  </g>
+  <g>
+    <rect x="192.3" y="86" width="37.8" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="211.2" y="105.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">C</text>
+  </g>
+  <g>
+    <rect x="239.1" y="86" width="77.0" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="277.6" y="105.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">SQLite</text>
+  </g>
+  <g>
+    <rect x="325.1" y="86" width="108.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="379.3" y="105.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">PostgreSQL</text>
+  </g>
+  <g>
+    <rect x="442.4" y="86" width="84.8" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="484.8" y="105.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">PyTorch</text>
+  </g>
+  <g>
+    <rect x="536.2" y="86" width="124.0" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="598.2" y="105.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">scikit-learn</text>
+  </g>
+  <g>
+    <rect x="669.2" y="86" width="69.2" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="703.8" y="105.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">NumPy</text>
+  </g>
+  <g>
+    <rect x="747.3" y="86" width="77.0" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="785.8" y="105.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">pandas</text>
+  </g>
+  <g>
+    <rect x="36.0" y="126" width="69.2" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="70.6" y="145.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">SciPy</text>
+  </g>
+  <g>
+    <rect x="114.2" y="126" width="108.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="168.3" y="145.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Matplotlib</text>
+  </g>
+  <g>
+    <rect x="231.4" y="126" width="84.8" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="273.9" y="145.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Seaborn</text>
+  </g>
+  <g>
+    <rect x="325.3" y="126" width="155.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="402.9" y="145.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Anthropic Claude</text>
+  </g>
+  <g>
+    <rect x="489.5" y="126" width="77.0" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="528.0" y="145.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">OpenAI</text>
+  </g>
+  <g>
+    <rect x="575.5" y="126" width="77.0" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="614.0" y="145.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Gemini</text>
+  </g>
+  <g>
+    <rect x="661.5" y="126" width="124.0" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="723.5" y="145.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Hugging Face</text>
+  </g>
+  <g>
+    <rect x="36.0" y="166" width="61.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="66.7" y="185.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Groq</text>
+  </g>
+  <g>
+    <rect x="106.3" y="166" width="84.8" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="148.7" y="185.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">LiteLLM</text>
+  </g>
+  <g>
+    <rect x="200.1" y="166" width="53.5" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="226.9" y="185.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">RAG</text>
+  </g>
+  <g>
+    <rect x="262.6" y="166" width="178.8" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="352.0" y="185.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Multi-agent systems</text>
+  </g>
+  <g>
+    <rect x="450.4" y="166" width="84.8" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="492.8" y="185.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">FastAPI</text>
+  </g>
+  <g>
+    <rect x="544.2" y="166" width="84.8" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="586.6" y="185.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Node.js</text>
+  </g>
+  <g>
+    <rect x="638.0" y="166" width="77.0" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="676.5" y="185.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Docker</text>
+  </g>
+  <g>
+    <rect x="724.0" y="166" width="108.3" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="778.1" y="185.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">SQLAlchemy</text>
+  </g>
+  <g>
+    <rect x="36.0" y="206" width="84.8" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="78.4" y="225.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Jupyter</text>
+  </g>
+  <g>
+    <rect x="129.8" y="206" width="100.5" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="180.0" y="225.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">REST APIs</text>
+  </g>
+  <g>
+    <rect x="239.3" y="206" width="108.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="293.4" y="225.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">WebSockets</text>
+  </g>
+  <g>
+    <rect x="356.6" y="206" width="108.3" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="410.7" y="225.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">TypeScript</text>
+  </g>
+  <g>
+    <rect x="473.9" y="206" width="69.2" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="508.5" y="225.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">React</text>
+  </g>
+  <g>
+    <rect x="552.0" y="206" width="124.0" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="614.0" y="225.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Tailwind CSS</text>
+  </g>
+  <g>
+    <rect x="685.0" y="206" width="61.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="715.6" y="225.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Vite</text>
+  </g>
+  <g>
+    <rect x="36.0" y="246" width="92.6" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="82.3" y="265.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">three.js</text>
+  </g>
+  <g>
+    <rect x="137.6" y="246" width="53.5" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="164.4" y="265.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Git</text>
+  </g>
+  <g>
+    <rect x="200.1" y="246" width="77.0" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="238.6" y="265.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">GitHub</text>
+  </g>
+  <g>
+    <rect x="286.1" y="246" width="139.6" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="355.9" y="265.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">GitHub Actions</text>
+  </g>
+  <g>
+    <rect x="434.7" y="246" width="84.8" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="477.1" y="265.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">VS Code</text>
+  </g>
+  <g>
+    <rect x="528.5" y="246" width="69.2" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="563.1" y="265.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Linux</text>
+  </g>
+  <g>
+    <rect x="606.7" y="246" width="77.0" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="645.2" y="265.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">pytest</text>
+  </g>
+  <g>
+    <rect x="692.7" y="246" width="61.3" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="723.3" y="265.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">Ruff</text>
+  </g>
+  <g>
+    <rect x="36.0" y="286" width="108.3" height="30" rx="15.0" fill="#FFD54A" fill-opacity="0.13" stroke="#FFD54A" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="90.2" y="305.6" fill="#FFD54A" font-size="13.5" font-weight="600" text-anchor="middle" class="f">pre-commit</text>
+  </g>
+  <g>
+    <rect x="153.3" y="286" width="53.5" height="30" rx="15.0" fill="#35D6FF" fill-opacity="0.13" stroke="#35D6FF" stroke-opacity="0.75" stroke-width="1.4"/>
+    <text x="180.0" y="305.6" fill="#35D6FF" font-size="13.5" font-weight="600" text-anchor="middle" class="f">DVC</text>
+  </g>
+</svg>

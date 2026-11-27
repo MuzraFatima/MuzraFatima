@@ -1,0 +1,58 @@
+{
+  "total": 386,
+  "last7": 27,
+  "mood": "happy",
+  "stage": "young",
+  "pose": "sitting",
+  "stage_label": "Young cat",
+  "weeks_active": 8,
+  "langs": [
+    {
+      "name": "Python",
+      "color": "#3572A5",
+      "pct": 74.57882740027135
+    },
+    {
+      "name": "JavaScript",
+      "color": "#f1e05a",
+      "pct": 14.755916689185998
+    },
+    {
+      "name": "TypeScript",
+      "color": "#3178c6",
+      "pct": 5.828621167768766
+    },
+    {
+      "name": "HTML",
+      "color": "#e34c26",
+      "pct": 2.514149436772296
+    },
+    {
+      "name": "CSS",
+      "color": "#663399",
+      "pct": 1.7066238321309484
+    },
+    {
+      "name": "TeX",
+      "color": "#3D6117",
+      "pct": 0.29473185676972075
+    }
+  ],
+  "last_day": "2026-11-27",
+  "generated": "2026-11-27 17:18 UTC",
+  "week_active": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true
+  ]
+}
