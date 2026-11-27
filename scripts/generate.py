@@ -27,6 +27,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import templates as T  # noqa: E402
 
+try:
+    from icons import ICONS  # brand logo paths, baked in - no network at runtime
+except ImportError:  # pragma: no cover - icons.py is generated, not hand-written
+    ICONS = {}
+
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
 LOGIN = "MuzraFatima"
@@ -44,16 +49,19 @@ ABOUT_LINES = [
 ABOUT_TAGS = ["Research-grade repos, not demos", "Agents & orchestration",
               "Interpretability & LLM internals", "Systems that run"]
 
-TECH = [
-    "Python", "Java", "C", "SQLite", "PostgreSQL",
-    "PyTorch", "scikit-learn", "NumPy", "pandas", "SciPy", "Matplotlib", "Seaborn",
-    "Anthropic Claude", "OpenAI", "Gemini", "Hugging Face", "Groq", "LiteLLM",
-    "RAG", "Multi-agent systems",
-    "FastAPI", "Node.js", "Docker", "SQLAlchemy", "Jupyter", "REST APIs", "WebSockets",
-    "TypeScript", "React", "Tailwind CSS", "Vite", "three.js",
-    "Git", "GitHub", "GitHub Actions", "VS Code", "Linux",
-    "pytest", "Ruff", "pre-commit", "DVC",
+TECH_GROUPS = [
+    ("Languages & core", ["Python", "Java", "C", "SQLite", "PostgreSQL"]),
+    ("AI / ML", ["PyTorch", "scikit-learn", "NumPy", "pandas", "SciPy",
+                 "Matplotlib", "Seaborn"]),
+    ("LLM & agentic AI", ["Anthropic Claude", "OpenAI", "Gemini", "Hugging Face",
+                          "Groq", "LiteLLM", "RAG", "Multi-agent systems"]),
+    ("Backend & data", ["FastAPI", "Node.js", "Docker", "SQLAlchemy", "Jupyter",
+                        "REST APIs", "WebSockets"]),
+    ("Frontend", ["TypeScript", "React", "Tailwind CSS", "Vite", "three.js"]),
+    ("Tooling & practice", ["Git", "GitHub", "GitHub Actions", "VS Code", "Linux",
+                            "pytest", "Ruff", "pre-commit", "DVC"]),
 ]
+TECH = [lab for _g, labs in TECH_GROUPS for lab in labs]
 
 FLAGSHIP = [
     {"slug": "horizonguard", "name": "HorizonGuard", "pose": "sitting",
@@ -87,9 +95,6 @@ MORE = [
     {"slug": "phonecheck", "name": "PhoneCheck", "pose": "sleeping",
      "tag": "Smartphone-addiction risk prediction across nine models",
      "url": "https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction"},
-    {"slug": "portfolio", "name": "Portfolio - The Galaxy of Intelligence", "pose": "sitting",
-     "tag": "An explorable 3D galaxy where each project is a planet you fly to",
-     "url": "https://github.com/MuzraFatima/portfolio"},
 ]
 
 ACHIEVEMENTS = [
@@ -467,14 +472,35 @@ def about() -> str:
 
 
 def tech() -> str:
-    pills, used = T.flow_pills(TECH, 36, 86, W - 72, gap=9, line_h=40)
-    h = 86 + used + 28
+    """Tech stack, grouped, each entry carrying its real brand logo."""
+    y = 78
+    body, flat = "", []
+    for group, labels in TECH_GROUPS:
+        body += T.text(36, y, group.upper(), 11.5, T.CYAN, "700",
+                       spacing=2.0, mono=True)
+        items = []
+        for lab in labels:
+            ic = ICONS.get(lab)
+            if ic:
+                items.append((lab, ic["d"], ic["color"]))
+            else:
+                # No published logo (Matplotlib, Seaborn, Groq, LiteLLM, VS Code
+                # and the concept entries). Fall back to the theme rather than
+                # guess at a brand colour or borrow another product's mark.
+                items.append((lab, None,
+                              T.CYAN if len(flat) % 2 == 0 else T.YELLOW))
+            flat.append(lab)
+        rows, used = T.flow_icon_pills(items, 36, y + 14, W - 72)
+        body += rows
+        y += 14 + used + 14
+    h = y + 10
+
     s = T.svg_open(W, h, "Tech stack",
-                   "Rounded pills alternating cyan and yellow listing: " + ", ".join(TECH))
+                   "Tech stack pills, each with its brand logo, grouped as: " +
+                   "; ".join(f"{g}: {', '.join(l)}" for g, l in TECH_GROUPS) + ".")
     s += T.panel(W, h, 24)
-    s += T.text(36, 56, "Tech Stack", 23, T.CYAN, "700")
-    s += T.paw_row(176, 49, 3, 0.62, 19)
-    return s + pills + T.svg_close()
+    s += T.text(34, 46, "TECH STACK", 11.5, T.CYAN, "700", spacing=2.2, mono=True)
+    return s + body + T.svg_close()
 
 
 def project(p: dict, flagship: bool) -> str:
@@ -681,14 +707,19 @@ def main() -> int:
                 write("achievements.svg", achievements()),
                 write("contact.svg", contact())]
 
-    # Files from earlier layouts that the new design no longer uses.
-    for stale in ["stats-contributions.svg", "stats-streak.svg",
-                  "stats-languages.svg"] + \
-                 [f"project-{p['slug']}.svg" for p in FLAGSHIP + MORE]:
-        old = ASSETS / stale
+    # Files from earlier layouts, and toy cards left over from a longer
+    # project list, that the current design no longer uses.
+    keep = {p.name for p in written}
+    stale = ["stats-contributions.svg", "stats-streak.svg", "stats-languages.svg"]
+    stale += [f"project-{p['slug']}.svg" for p in FLAGSHIP + MORE]
+    stale += [p.name for p in ASSETS.glob("toy-*.svg")]
+    for name in dict.fromkeys(stale):
+        if name in keep:
+            continue
+        old = ASSETS / name
         if old.exists():
             old.unlink()
-            print(f"  removed superseded {stale}")
+            print(f"  removed superseded {name}")
 
     print(f"\nWrote {len(written)} SVGs to {ASSETS}")
     print("Validating...")

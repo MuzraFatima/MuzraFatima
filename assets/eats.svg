@@ -4,9 +4,9 @@
   <desc id="d">Language breakdown by bytes across owned repositories: Python 75 percent, JavaScript 15 percent, TypeScript 6 percent, HTML 2 percent, CSS 2 percent</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
-      <stop offset="0%" stop-color="#061629"/>
-      <stop offset="55%" stop-color="#071A33"/>
-      <stop offset="100%" stop-color="#0B2946"/>
+      <stop offset="0%" stop-color="#080A11"/>
+      <stop offset="55%" stop-color="#0A1520"/>
+      <stop offset="100%" stop-color="#0C2234"/>
     </linearGradient>
     <linearGradient id="ringGrad" x1="0" y1="1" x2="1" y2="0">
       <stop offset="0%" stop-color="#35D6FF"/>
@@ -14,8 +14,8 @@
       <stop offset="100%" stop-color="#FFD54A"/>
     </linearGradient>
     <radialGradient id="horizonGlow" cx="50%" cy="0%" r="75%">
-      <stop offset="0%" stop-color="#35D6FF" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#0E6E9E" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#0E6E9E" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
       <stop offset="58%" stop-color="#35D6FF" stop-opacity="0"/>
@@ -98,7 +98,7 @@
     }
   </style>
   <rect x="0" y="0" width="880" height="268" rx="22" fill="url(#bgGrad)"/>
-  <rect x="1.5" y="1.5" width="877" height="265" rx="20.5" fill="none" stroke="#35D6FF" stroke-opacity="0.22" stroke-width="3"/>
+  <rect x="1" y="1" width="878" height="266" rx="21" fill="none" stroke="#35D6FF" stroke-opacity="0.10" stroke-width="2"/>
   <text x="34" y="46" fill="#35D6FF" font-size="11.5" font-weight="700" letter-spacing="2.2" class="m">WHAT IT EATS</text>
   <rect x="34" y="78" width="11" height="11" rx="2.8" fill="#3572A5"/>
   <text x="56" y="88" fill="#FFFFFF" font-size="13.5" font-weight="600" class="f">Python</text>

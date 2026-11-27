@@ -18,8 +18,10 @@ import random
 
 # ----------------------------------------------------------------- palette
 
-BG     = "#071A33"
-CARD   = "#0E2A4D"
+# Sampled from the Code Pet reference: a near-black page with very dark
+# teal-navy cards, not the brighter blue navy this started as.
+BG     = "#0B0D14"
+CARD   = "#0A1620"
 CYAN   = "#35D6FF"
 YELLOW = "#FFD54A"
 CREAM  = "#FFF0D6"
@@ -65,9 +67,9 @@ def esc(text: str) -> str:
 def defs(extra: str = "") -> str:
     return f"""  <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
-      <stop offset="0%" stop-color="#061629"/>
-      <stop offset="55%" stop-color="{BG}"/>
-      <stop offset="100%" stop-color="#0B2946"/>
+      <stop offset="0%" stop-color="#080A11"/>
+      <stop offset="55%" stop-color="#0A1520"/>
+      <stop offset="100%" stop-color="#0C2234"/>
     </linearGradient>
     <linearGradient id="ringGrad" x1="0" y1="1" x2="1" y2="0">
       <stop offset="0%" stop-color="{CYAN}"/>
@@ -75,8 +77,8 @@ def defs(extra: str = "") -> str:
       <stop offset="100%" stop-color="{YELLOW}"/>
     </linearGradient>
     <radialGradient id="horizonGlow" cx="50%" cy="0%" r="75%">
-      <stop offset="0%" stop-color="{CYAN}" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="{CYAN}" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#0E6E9E" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#0E6E9E" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
       <stop offset="58%" stop-color="{CYAN}" stop-opacity="0"/>
@@ -184,14 +186,17 @@ def svg_close() -> str:
 def panel(w: int, h: int, radius: int = 24, horizon: bool = False) -> str:
     s = (f'  <rect x="0" y="0" width="{w}" height="{h}" rx="{radius}" fill="url(#bgGrad)"/>\n')
     if horizon:
-        # soft planet horizon arc, as in the reference banner
-        s += (f'  <ellipse cx="{w/2}" cy="{h + h*0.52:.0f}" rx="{w*0.78:.0f}" '
-              f'ry="{h*0.72:.0f}" fill="url(#horizonGlow)"/>\n'
-              f'  <path d="M{w*0.05:.0f},{h*0.93:.0f} Q{w/2},{h*0.76:.0f} '
-              f'{w*0.95:.0f},{h*0.93:.0f}" fill="none" stroke="{CYAN}" '
-              f'stroke-opacity=".24" stroke-width="2"/>\n')
-    s += (f'  <rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="{radius - 1.5}" '
-          f'fill="none" stroke="{CYAN}" stroke-opacity="0.22" stroke-width="3"/>\n')
+        # Soft planet horizon the pet sits on. It belongs behind the cat, well
+        # clear of the stats row at the foot of the banner, or it washes the
+        # contributions text out.
+        s += (f'  <ellipse cx="{w/2}" cy="{h*1.28:.0f}" rx="{w*0.62:.0f}" '
+              f'ry="{h*0.62:.0f}" fill="url(#horizonGlow)"/>\n'
+              f'  <path d="M{w*0.07:.0f},{h*0.74:.0f} Q{w/2},{h*0.60:.0f} '
+              f'{w*0.93:.0f},{h*0.74:.0f}" fill="none" stroke="{CYAN}" '
+              f'stroke-opacity=".16" stroke-width="1.8"/>\n')
+    # The reference cards read as borderless; keep only a whisper of an edge.
+    s += (f'  <rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="{radius - 1}" '
+          f'fill="none" stroke="{CYAN}" stroke-opacity="0.10" stroke-width="2"/>\n')
     return s
 
 
@@ -429,6 +434,73 @@ def badge_pill(x, y, label, color, h=28, size=12.5, pad=14, dot=True):
     s += (f'    <text x="{tx:.1f}" y="{y + h/2 + 4.3:.1f}" fill="{color}" font-size="{size}" '
           f'font-weight="600" class="f">{esc(label)}</text>\n  </g>\n')
     return s, w
+
+
+def readable(hex_color: str, floor: float = 0.34) -> str:
+    """Lift a brand colour that would disappear against the navy panel.
+
+    GitHub's #181717 and OpenAI's #412991 are almost black; drawn as-is they
+    vanish. Anything below the luminance floor is blended toward white just
+    far enough to read, which keeps the hue recognisable.
+    """
+    c = hex_color.lstrip("#")
+    if len(c) == 3:
+        c = "".join(ch * 2 for ch in c)
+    try:
+        r, g, b = (int(c[i:i + 2], 16) for i in (0, 2, 4))
+    except ValueError:
+        return CYAN
+    lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255.0
+    if lum >= floor:
+        return "#" + c.upper()
+    # blend toward white by the shortfall, never past 85% white
+    t = min(0.85, (floor - lum) / max(floor, 1e-6) * 0.9)
+    r, g, b = (round(v + (255 - v) * t) for v in (r, g, b))
+    return "#%02X%02X%02X" % (r, g, b)
+
+
+def icon_pill(x, y, label, path_d=None, color=None, h=34, size=13.5,
+              pad=13, gap=8, icon=17):
+    """A tech pill carrying the real brand logo.
+
+    `path_d` is a Simple Icons path in a 24x24 box, scaled down and tinted
+    with the brand colour. Without one the pill falls back to a coloured dot,
+    so an entry with no published logo still looks deliberate.
+    """
+    accent = readable(color) if color else CYAN
+    glyph_w = icon if path_d else 10
+    w = pad * 2 + glyph_w + gap + len(label) * size * 0.56
+
+    s = (f'  <g>\n'
+         f'    <rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{h}" rx="{h/2}" '
+         f'fill="{accent}" fill-opacity="0.13" stroke="{accent}" '
+         f'stroke-opacity="0.65" stroke-width="1.3"/>\n')
+    gx, gy = x + pad, y + (h - icon) / 2
+    if path_d:
+        s += (f'    <g transform="translate({gx:.1f},{gy:.1f}) '
+              f'scale({icon / 24:.4f})" fill="{accent}">'
+              f'<path d="{path_d}"/></g>\n')
+    else:
+        s += (f'    <rect x="{gx:.1f}" y="{y + h/2 - 5:.1f}" width="10" height="10" '
+              f'rx="2.6" fill="{accent}"/>\n')
+    s += (f'    <text x="{gx + glyph_w + gap:.1f}" y="{y + h/2 + 4.7:.1f}" '
+          f'fill="{TEXT}" font-size="{size}" font-weight="600" class="f">'
+          f'{esc(label)}</text>\n  </g>\n')
+    return s, w
+
+
+def flow_icon_pills(items, x0, y0, max_w, gap=9, line_h=43):
+    """Wrap icon pills into rows. `items` are (label, path_d, colour)."""
+    out, x, y = [], x0, y0
+    for label, d, col in items:
+        s, w = icon_pill(x, y, label, d, col)
+        if x + w > x0 + max_w and x > x0:
+            x = x0
+            y += line_h
+            s, w = icon_pill(x, y, label, d, col)
+        out.append(s)
+        x += w + gap
+    return "".join(out), (y - y0) + line_h
 
 
 def pill(x, y, label, idx, h=30, pad=15, size=13.5):

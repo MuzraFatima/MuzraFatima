@@ -109,9 +109,6 @@ Hypotheses and thresholds were fixed in advance, and the four that were **not** 
 
 **[PhoneCheck](https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction)** — Smartphone-addiction risk prediction across **nine models** (logistic regression through XGBoost, LightGBM and a stacking ensemble) with 5-fold cross-validation and a feature-ablation study. The basis of my published paper. <sub>`Python` · `scikit-learn` · `FastAPI`</sub>
 
-<a href="https://github.com/MuzraFatima/portfolio"><img src="assets/toy-09.svg" alt="Toy 09, Portfolio, The Galaxy of Intelligence: an explorable 3D galaxy where each project is a planet you fly to." width="100%" /></a>
-
-**[Portfolio — The Galaxy of Intelligence](https://github.com/MuzraFatima/portfolio)** — An explorable 3D portfolio: a galaxy built from real NASA, ESA and ESO imagery, where each project is a planet you can fly to. Fully readable without WebGL. [Live →](https://muzraporfolio.vercel.app/) <sub>`React 19` · `TypeScript` · `three.js` · `Vite`</sub>
 
 ## 🍽️ What it eats
 
