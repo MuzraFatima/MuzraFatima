@@ -1,8 +1,12 @@
-<a href="https://muzraporfolio.vercel.app/"><img src="assets/hero.svg" alt="Code Pet. Muzra Fatima, Aspiring AI/ML Engineer. A fluffy cream cat mascot floating in a glowing cyan ring on a starfield." width="100%" /></a>
+<img src="assets/hero.svg" alt="Code Pet banner for @MuzraFatima: a round blue cat mascot on a starfield, with the current streak, contributions this year, and top languages." width="100%" />
 
-<img src="assets/about.svg" alt="About Me: final-year B.Tech student in Artificial Intelligence and Machine Learning, based in Telangana, India, who builds LLM-powered multi-agent systems, cost-aware model routing and mechanistic interpretability tooling." width="100%" />
+My pet grows with my real contributions: the yearly total sets its stage, a 13-week streak fills its meter, and seven quiet days put it to sleep until my next commit. Everything on this page is generated daily from the GitHub API — nothing is hand-written.
+
+<img src="assets/owner.svg" alt="Pet owner card: Muzra Fatima, AI/ML Engineer working on multi-agent systems, LLMs and reinforcement learning, with follower, repository and star counts." width="100%" />
 
 ## 👋 About me
+
+<img src="assets/about.svg" alt="About Me: final-year B.Tech student in Artificial Intelligence and Machine Learning, based in Telangana, India, who builds LLM-powered multi-agent systems, cost-aware model routing and mechanistic interpretability tooling." width="100%" />
 
 Final-year **B.Tech student in Artificial Intelligence & Machine Learning** based in Telangana, India. I build **LLM-powered multi-agent systems**, **cost-aware model routing**, and **mechanistic interpretability** tooling — then measure whether they actually work.
 
@@ -13,9 +17,9 @@ Final-year **B.Tech student in Artificial Intelligence & Machine Learning** base
 - 📄 **Published** in *HBRP Publication* (2025) and **winner** of the Smart India Hackathon 2026 internal round.
 - 🎯 **Looking for** an entry-level AI/ML or Generative AI engineering role.
 
-<img src="assets/tech.svg" alt="Tech stack pills: Python, Java, C, SQLite, PostgreSQL, PyTorch, scikit-learn, NumPy, pandas, SciPy, Matplotlib, Seaborn, Anthropic Claude, OpenAI, Gemini, Hugging Face, Groq, LiteLLM, RAG, Multi-agent systems, FastAPI, Node.js, Docker, SQLAlchemy, Jupyter, REST APIs, WebSockets, TypeScript, React, Tailwind CSS, Vite, three.js, Git, GitHub, GitHub Actions, VS Code, Linux, pytest, Ruff, pre-commit, DVC." width="100%" />
-
 ## 🛠️ Tech stack
+
+<img src="assets/tech.svg" alt="Tech stack pills: Python, Java, C, SQLite, PostgreSQL, PyTorch, scikit-learn, NumPy, pandas, SciPy, Matplotlib, Seaborn, Anthropic Claude, OpenAI, Gemini, Hugging Face, Groq, LiteLLM, RAG, Multi-agent systems, FastAPI, Node.js, Docker, SQLAlchemy, Jupyter, REST APIs, WebSockets, TypeScript, React, Tailwind CSS, Vite, three.js, Git, GitHub, GitHub Actions, VS Code, Linux, pytest, Ruff, pre-commit, DVC." width="100%" />
 
 **Languages & core** — Python · Java · C · SQLite · PostgreSQL
 
@@ -29,11 +33,11 @@ Final-year **B.Tech student in Artificial Intelligence & Machine Learning** base
 
 **Tooling & practice** — Git · GitHub · GitHub Actions · VS Code · Linux · pytest · Ruff · pre-commit · DVC
 
-## 🚀 Flagship AI/ML work
+## 🧸 The toy box
 
-> The four projects I would most like to be judged on. Every number below is produced by the code in its repository.
+> The four projects I would most like to be judged on come first. Every number below is produced by the code in its repository.
 
-<a href="https://github.com/MuzraFatima/HorizonGuard"><img src="assets/project-horizonguard.svg" alt="HorizonGuard: recoverability-aware early warning for long-horizon agents. Violation rate 65 percent to 10 percent against a 40 percent probability-only alarm." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/HorizonGuard"><img src="assets/toy-01.svg" alt="Toy 01, HorizonGuard: recoverability-aware early warning for long-horizon agents, with its star, fork and language counts." width="100%" /></a>
 
 ### 🛡️ [HorizonGuard](https://github.com/MuzraFatima/HorizonGuard) — recoverability-aware early warning for long-horizon agents
 
@@ -49,7 +53,7 @@ Multi-state hazard modelling · counterfactual fork labels · conformal risk con
 
 <sub><code>Python</code> · <code>NumPy/SciPy</code> · <code>TypeScript</code> dashboard · <code>DVC</code> · <code>Docker</code> · <code>pre-commit</code> · CI</sub>
 
-<a href="https://github.com/MuzraFatima/NeuroLens"><img src="assets/project-neurolens.svg" alt="NeuroLens slash TopoCircuit-SAE: multi-parent feature absorption in sparse autoencoders. MPAbs benchmark and DR-SAE on real Pythia-70M activations, CPU only." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/NeuroLens"><img src="assets/toy-02.svg" alt="Toy 02, NeuroLens slash TopoCircuit-SAE: multi-parent feature absorption in sparse autoencoders, with its star, fork and language counts." width="100%" /></a>
 
 ### 🔍 [NeuroLens / TopoCircuit-SAE](https://github.com/MuzraFatima/NeuroLens) — multi-parent feature absorption in sparse autoencoders
 
@@ -59,7 +63,7 @@ Seven SAEs of width 2,048 trained on the same 857,504 tokens · absorption, fide
 
 <sub><code>Python</code> · <code>PyTorch</code> · mechanistic interpretability · AIML capstone</sub>
 
-<a href="https://github.com/MuzraFatima/Compute-bazar"><img src="assets/project-compute-bazaar.svg" alt="Compute Bazaar: a combinatorial compute market for agents that do not know their own value. Risk-adjusted XOR menus reach 78.0 percent of oracle welfare." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/Compute-bazar"><img src="assets/toy-03.svg" alt="Toy 03, Compute Bazaar: a combinatorial compute market for agents that do not know their own value, with its star, fork and language counts." width="100%" /></a>
 
 ### ⚖️ [Compute Bazaar](https://github.com/MuzraFatima/Compute-bazar) — a combinatorial compute market for agents that don't know their own value
 
@@ -75,7 +79,7 @@ Getting the Clarke pivot right matters: the common per-bid shortcut was exploita
 
 <sub><code>Python</code> · <code>FastAPI</code> · WebSocket dashboard · live Groq LLM bidders · <code>Docker</code> · 27 end-to-end checks</sub>
 
-<a href="https://github.com/MuzraFatima/AstroLM"><img src="assets/project-astrolm.svg" alt="AstroLM: a decoder-only language model built from scratch, and what it memorizes. The 29.4M model reaches 1.060 test bits per byte, 23 percent below a 5-gram baseline." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/AstroLM"><img src="assets/toy-04.svg" alt="Toy 04, AstroLM: a decoder-only language model built from scratch, with its star, fork and language counts." width="100%" /></a>
 
 ### 🌌 [AstroLM](https://github.com/MuzraFatima/AstroLM) — a decoder-only LM built from scratch, and what it memorizes
 
@@ -89,37 +93,35 @@ Hypotheses and thresholds were fixed in advance, and the four that were **not** 
 
 <sub><code>Python</code> · <code>PyTorch</code> · custom tokenizer · bit-exact resumable training · local-only web UI</sub>
 
-## 📂 More projects
-
-<a href="https://github.com/MuzraFatima/WhoToTrust"><img src="assets/project-whototrust.svg" alt="WhoToTrust: LabelTriage decides, vote by vote, whether a disagreement is an error or a real difference of opinion." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/WhoToTrust"><img src="assets/toy-05.svg" alt="Toy 05, WhoToTrust: LabelTriage decides, vote by vote, whether a disagreement is an error or a real difference of opinion." width="100%" /></a>
 
 **[WhoToTrust](https://github.com/MuzraFatima/WhoToTrust)** — When annotators disagree, is it a mistake or a real difference of opinion? **LabelTriage** decides vote by vote, then trains on each kind differently. Ships the **AmbiNoise** benchmark (CIFAR-10H, ChaosNLI) and a vote-level explorer. <sub>`Python` · `React` · CI</sub>
 
-<a href="https://github.com/MuzraFatima/Cost-aware-agent"><img src="assets/project-caar.svg" alt="Cost-Aware Agent Router: confidence-based multi-tier LLM routing with 85.3 percent evaluated cost savings." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/Cost-aware-agent"><img src="assets/toy-06.svg" alt="Toy 06, Cost-Aware Agent Router: confidence-based multi-tier LLM routing with 85.3 percent evaluated cost savings." width="100%" /></a>
 
 **[Cost-Aware Agent Router](https://github.com/MuzraFatima/Cost-aware-agent)** — Confidence-based multi-tier LLM routing: start at the cheapest capable tier, escalate only when confidence is insufficient. **85.3% evaluated cost savings**, with token-level accounting and auditable routing paths. <sub>`Python` · `FastAPI` · `LiteLLM` · `SQLite`</sub>
 
-<a href="https://github.com/MuzraFatima/jocky-forensics"><img src="assets/project-jocky.svg" alt="JOCKY Forensics: a domain-specific programming language for digital forensics, with 540 tests passing." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/jocky-forensics"><img src="assets/toy-07.svg" alt="Toy 07, JOCKY Forensics: a domain-specific programming language for digital forensics, with 540 tests passing." width="100%" /></a>
 
 **[JOCKY Forensics](https://github.com/MuzraFatima/jocky-forensics)** — A domain-specific **programming language for digital forensics** — compiler, read-only policy checker, cross-platform evidence engine with tamper-evident sealing, and a web dashboard. Built for SIH 2026 (SIH26148). **540 tests passing.** [Live demo →](https://jocky-forensic.netlify.app) <sub>`Python` · `JavaScript` · `Docker`</sub>
 
-<a href="https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction"><img src="assets/project-phonecheck.svg" alt="PhoneCheck: smartphone-addiction risk prediction across nine models." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction"><img src="assets/toy-08.svg" alt="Toy 08, PhoneCheck: smartphone-addiction risk prediction across nine models." width="100%" /></a>
 
 **[PhoneCheck](https://github.com/MuzraFatima/Prediction-to-Smartphone-Addiction)** — Smartphone-addiction risk prediction across **nine models** (logistic regression through XGBoost, LightGBM and a stacking ensemble) with 5-fold cross-validation and a feature-ablation study. The basis of my published paper. <sub>`Python` · `scikit-learn` · `FastAPI`</sub>
 
-<a href="https://github.com/MuzraFatima/portfolio"><img src="assets/project-portfolio.svg" alt="Portfolio, The Galaxy of Intelligence: an explorable 3D galaxy where each project is a planet you fly to." width="100%" /></a>
+<a href="https://github.com/MuzraFatima/portfolio"><img src="assets/toy-09.svg" alt="Toy 09, Portfolio, The Galaxy of Intelligence: an explorable 3D galaxy where each project is a planet you fly to." width="100%" /></a>
 
 **[Portfolio — The Galaxy of Intelligence](https://github.com/MuzraFatima/portfolio)** — An explorable 3D portfolio: a galaxy built from real NASA, ESA and ESO imagery, where each project is a planet you can fly to. Fully readable without WebGL. [Live →](https://muzraporfolio.vercel.app/) <sub>`React 19` · `TypeScript` · `three.js` · `Vite`</sub>
 
-## 📊 GitHub activity
+## 🍽️ What it eats
 
-<img src="assets/stats-contributions.svg" alt="Yearly contributions and the current pet stage, generated daily from the GitHub API." width="100%" />
+<img src="assets/eats.svg" alt="Language breakdown by bytes across owned repositories, generated daily from the GitHub API." width="100%" />
 
-<img src="assets/stats-languages.svg" alt="Top languages by bytes across owned repositories, generated daily from the GitHub API." width="100%" />
+## 📅 Care log
 
-<img src="assets/stats-streak.svg" alt="A 13-week contribution streak, where a week counts when it has at least one contribution." width="100%" />
+<img src="assets/carelog.svg" alt="A heatmap of contributions over the last 26 weeks, with the current fed-in-a-row day count." width="100%" />
 
-<sub>The pet grows with the yearly contribution count — sleeping fluffball under 50, kitten to 199, young cat to 499, adult cat at 500 and above — and dozes off when there have been no contributions for seven days.</sub>
+<sub>The pet's stage comes from the yearly contribution count — sleeping fluffball under 50, kitten to 199, young to 499, adult at 500 and above — and it dozes off after seven days with no contributions.</sub>
 
 ## 🏆 Achievements
 
@@ -146,7 +148,7 @@ Hypotheses and thresholds were fixed in advance, and the four that were **not** 
 
 ## 💬 Let's talk
 
-<img src="assets/contact.svg" alt="Contact: email muzrafatima at gmail dot com, LinkedIn muzra-fatima, and the portfolio at muzraporfolio.vercel.app, with a waving cream cat." width="100%" />
+<img src="assets/contact.svg" alt="Contact: email muzrafatima at gmail dot com, LinkedIn muzra-fatima, and the portfolio at muzraporfolio.vercel.app, with a waving blue cat." width="100%" />
 
 I'm looking for an **entry-level AI/ML or Generative AI engineering role**, and I'm always glad to talk about agents, routing and interpretability.
 

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 148" width="880" height="148" role="img" aria-labelledby="t d">
+  <title id="t">Toy 02: NeuroLens / TopoCircuit-SAE</title>
+  <desc id="d">Project card 2 for NeuroLens / TopoCircuit-SAE. Multi-parent feature absorption in sparse autoencoders 0 stars, 0 forks, language Python.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#061629"/>
+      <stop offset="55%" stop-color="#071A33"/>
+      <stop offset="100%" stop-color="#0B2946"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#35D6FF"/>
+      <stop offset="55%" stop-color="#7FE4FF"/>
+      <stop offset="100%" stop-color="#FFD54A"/>
+    </linearGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#35D6FF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="58%" stop-color="#35D6FF" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#35D6FF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="furGrad" cx="34%" cy="26%" r="82%">
+      <stop offset="0%" stop-color="#7FD9FB"/>
+      <stop offset="58%" stop-color="#45BCF0"/>
+      <stop offset="100%" stop-color="#1F93CC"/>
+    </radialGradient>
+    <radialGradient id="bellyGrad" cx="50%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D6F2FE"/>
+    </radialGradient>
+    <radialGradient id="cheekGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9FB2" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FF9FB2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="sparkle" d="M0,-6 Q1.1,-1.1 6,0 Q1.1,1.1 0,6 Q-1.1,1.1 -6,0 Q-1.1,-1.1 0,-6 Z"/>
+    <g id="paw">
+      <ellipse cx="0" cy="2.6" rx="4.6" ry="3.7"/>
+      <ellipse cx="-4.4" cy="-2.6" rx="1.9" ry="2.5"/>
+      <ellipse cx="-1.5" cy="-4.4" rx="1.9" ry="2.5"/>
+      <ellipse cx="1.5" cy="-4.4" rx="1.9" ry="2.5"/>
+      <ellipse cx="4.4" cy="-2.6" rx="1.9" ry="2.5"/>
+    </g>
+    <g id="starBadge">
+      <path d="M0,-11 L3.2,-3.6 L11,-3.1 L5.1,2 L6.9,9.7 L0,5.6 L-6.9,9.7 L-5.1,2 L-11,-3.1 L-3.2,-3.6 Z"/>
+    </g>
+  </defs>
+  <style>
+    .f { font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+    .m { font-family: ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+    .cat { animation: float 4.6s ease-in-out infinite; }
+    .tail { transform-box: fill-box; transform-origin: 10% 85%; animation: swish 3.4s ease-in-out infinite; }
+    .earL { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchL 7s ease-in-out infinite; }
+    .earR { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchR 7s ease-in-out infinite; }
+    .eye { transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5.8s ease-in-out infinite; }
+    .ringDash { animation: spin 30s linear infinite; }
+    .ringDot { animation: spin 22s linear infinite; }
+    .glowPulse { transform-box: fill-box; transform-origin: 50% 50%; animation: pulse 4.6s ease-in-out infinite; }
+    .breathe { transform-box: fill-box; transform-origin: 50% 90%; animation: breathe 3.8s ease-in-out infinite; }
+    .zz { transform-box: fill-box; transform-origin: 50% 100%; animation: zzz 3.4s ease-in-out infinite; }
+    .wave { transform-box: fill-box; transform-origin: 22% 88%; animation: wave 1.9s ease-in-out infinite; }
+    .stA, .stB, .stC { transform-box: fill-box; transform-origin: 50% 50%;
+                        animation: twinkle 3.6s ease-in-out infinite; }
+    .stB { animation-duration: 4.4s; animation-delay: -1.2s; }
+    .stC { animation-duration: 5.2s; animation-delay: -2.4s; }
+
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes swish { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(11deg); } }
+    @keyframes blink { 0%,91%,100% { transform: scaleY(1); } 94% { transform: scaleY(0.08); } 97% { transform: scaleY(1); } }
+    @keyframes twitchL { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(8deg); } 94% { transform: rotate(-3deg); } }
+    @keyframes twitchR { 0%,88%,100% { transform: rotate(0); } 92% { transform: rotate(-9deg); } 96% { transform: rotate(3deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+    @keyframes zzz { 0% { opacity: 0; transform: translateY(4px) scale(.8); }
+                      35% { opacity: 1; }
+                      100% { opacity: 0; transform: translateY(-14px) scale(1.15); } }
+    @keyframes wave { 0%,100% { transform: rotate(-18deg); } 50% { transform: rotate(12deg); } }
+    @keyframes twinkle { 0%,100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cat, .tail, .earL, .earR, .eye, .ringDash, .ringDot, .glowPulse,
+      .breathe, .zz, .wave, .stA, .stB, .stC { animation: none !important; }
+    }
+  </style>
+  <rect x="0" y="0" width="880" height="148" rx="20" fill="url(#bgGrad)"/>
+  <rect x="1.5" y="1.5" width="877" height="145" rx="18.5" fill="none" stroke="#35D6FF" stroke-opacity="0.22" stroke-width="3"/>
+  <g>
+    <g transform="translate(761,39)"><g class="stA"><circle cx="0" cy="0" r="1.4" fill="#35D6FF" opacity="0.44"/></g></g>
+    <g transform="translate(825,101)"><g class="stB"><circle cx="0" cy="0" r="1.6" fill="#FFFFFF" opacity="0.46"/></g></g>
+    <g transform="translate(738,96)"><g class="stC"><circle cx="0" cy="0" r="1.5" fill="#FFFFFF" opacity="0.8"/></g></g>
+    <g transform="translate(809,128)"><g class="stA"><circle cx="0" cy="0" r="1.0" fill="#FFFFFF" opacity="0.87"/></g></g>
+    <g transform="translate(777,125)"><g class="stB"><circle cx="0" cy="0" r="1.9" fill="#35D6FF" opacity="0.89"/></g></g>
+  </g>
+  <text x="32" y="42" fill="#35D6FF" font-size="11" font-weight="700" letter-spacing="2.2" class="m">TOY 02</text>
+  <text x="32" y="76" fill="#FFFFFF" font-size="21" font-weight="700" class="m">NeuroLens / TopoCircuit-SAE</text>
+  <text x="32" y="102" fill="#9FB8D6" font-size="13.5" font-weight="400" class="f">Multi-parent feature absorption in sparse autoencoders</text>
+  <text x="32" y="130" fill="#9FB8D6" font-size="12.5" font-weight="600" class="m">&#9733; 0     &#9282; 0</text>
+  <rect x="150" y="121" width="10" height="10" rx="2.5" fill="#3572A5"/>
+  <text x="168" y="130" fill="#9FB8D6" font-size="12.5" font-weight="600" class="m">Python</text>
+  <g transform="translate(788,80) scale(0.4)">
+    <g class="cat">
+      <g transform="rotate(-8)">
+      <g class="tail">
+        <path d="M40,30 C64,34 80,22 82,2 C83,-12 74,-22 63,-22 C54,-22 48,-15 48,-7
+                 C48,0 53,4 58,4 C62,4 65,2 66,-2 C68,10 58,20 42,19 Z"
+              fill="url(#furGrad)" stroke="#1878A8" stroke-width="1.9" stroke-linejoin="round"/>
+        <path d="M70,-16 C76,-10 76,2 70,8" fill="none" stroke="#D6F2FE"
+              stroke-width="2" stroke-linecap="round" stroke-opacity=".8"/>
+      </g>
+      <g class="earL">
+        <path d="M-40,-24 C-46,-44 -40,-57 -30,-56 C-23,-54 -18,-43 -15,-32 Z"
+              fill="#45BCF0" stroke="#1878A8" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M-36,-29 C-40,-42 -35,-50 -30,-49 C-26,-47 -23,-40 -21,-34 Z"
+              fill="#7FD9FB" opacity=".95"/>
+      </g>
+      <g class="earR">
+        <path d="M40,-24 C46,-44 40,-57 30,-56 C23,-54 18,-43 15,-32 Z"
+              fill="#45BCF0" stroke="#1878A8" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M36,-29 C40,-42 35,-50 30,-49 C26,-47 23,-40 21,-34 Z"
+              fill="#7FD9FB" opacity=".95"/>
+      </g>
+      <ellipse cx="0" cy="48" rx="40" ry="8" fill="#031120" opacity=".45"/>
+      <path d="M0,-44 C31,-44 53,-24 53,2 C53,28 33,47 0,47
+                C-33,47 -53,28 -53,2 C-53,-24 -31,-44 0,-44 Z"
+            fill="url(#furGrad)" stroke="#1878A8" stroke-width="2.2" stroke-linejoin="round"/>
+      <ellipse cx="-18" cy="-20" rx="16" ry="11" fill="#FFFFFF" opacity=".16"/>
+      <g class="eye">
+        <ellipse cx="-17" cy="-7" rx="11" ry="12.5" fill="#FFFFFF"/>
+        <ellipse cx="-17" cy="-6" rx="6.6" ry="7.8" fill="#0B2B42"/>
+        <circle cx="-19.6" cy="-10.2" r="3.1" fill="#FFFFFF"/>
+        <circle cx="-14.0" cy="-1.8" r="1.6" fill="#FFFFFF" opacity=".9"/>
+      </g>
+      <g class="eye">
+        <ellipse cx="17" cy="-7" rx="11" ry="12.5" fill="#FFFFFF"/>
+        <ellipse cx="17" cy="-6" rx="6.6" ry="7.8" fill="#0B2B42"/>
+        <circle cx="14.4" cy="-10.2" r="3.1" fill="#FFFFFF"/>
+        <circle cx="20.0" cy="-1.8" r="1.6" fill="#FFFFFF" opacity=".9"/>
+      </g>
+      <ellipse cx="-31" cy="9" rx="11" ry="7" fill="url(#cheekGrad)"/>
+      <ellipse cx="31" cy="9" rx="11" ry="7" fill="url(#cheekGrad)"/>
+      <path d="M-7,10 C-4,14.5 4,14.5 7,10" fill="none" stroke="#1878A8"
+            stroke-width="2.2" stroke-linecap="round"/>
+      <ellipse cx="-17" cy="45" rx="10" ry="6" fill="#45BCF0"
+               stroke="#1878A8" stroke-width="1.6"/>
+      <ellipse cx="17" cy="45" rx="10" ry="6" fill="#45BCF0"
+               stroke="#1878A8" stroke-width="1.6"/>
+      </g>
+      <g class="wave">
+        <ellipse cx="-54" cy="2" rx="12" ry="8.5" fill="url(#bellyGrad)"
+                 stroke="#1878A8" stroke-width="1.7" transform="rotate(-26 -54 2)"/>
+      </g>
+      <circle cx="62" cy="40" r="13" fill="#FFD54A" opacity=".95"/>
+      <path d="M52,40 C56,33 68,33 72,40 M52,40 C56,47 68,47 72,40" fill="none"
+            stroke="#B98F10" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+</svg>

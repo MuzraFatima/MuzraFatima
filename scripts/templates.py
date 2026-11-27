@@ -1,7 +1,7 @@
 """Shared drawing primitives for the Code Pet profile SVGs.
 
-Every SVG in assets/ is produced from this module so the mascot is literally
-the same character everywhere, only its pose, size and mood change.
+The mascot is drawn once here and reused everywhere, so it is literally the
+same character in every pose and section.
 
 Two rules this module exists to enforce:
 
@@ -26,13 +26,19 @@ CREAM  = "#FFF0D6"
 PINK   = "#FF9FB2"
 TEXT   = "#FFFFFF"
 MUTED  = "#9FB8D6"
+GREEN  = "#4ADE80"
 
-FUR_LINE  = "#E4C89E"
-FUR_LIGHT = "#FFFBF2"
-NOSE_LINE = "#C9A77C"
+# The mascot: a round, chubby blue cat, matching the Code Pet reference.
+CAT_LIGHT = "#7FD9FB"
+CAT_MID   = "#45BCF0"
+CAT_DARK  = "#1F93CC"
+CAT_BELLY = "#D6F2FE"
+CAT_LINE  = "#1878A8"
 
 FONT = ("'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', "
         "Arial, sans-serif")
+MONO = ("ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', "
+        "Consolas, monospace")
 
 
 def esc(text: str) -> str:
@@ -58,37 +64,40 @@ def esc(text: str) -> str:
 
 def defs(extra: str = "") -> str:
     return f"""  <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="{BG}"/>
-      <stop offset="55%" stop-color="#0B2140"/>
-      <stop offset="100%" stop-color="{CARD}"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#061629"/>
+      <stop offset="55%" stop-color="{BG}"/>
+      <stop offset="100%" stop-color="#0B2946"/>
     </linearGradient>
-    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="58%" stop-color="{CYAN}" stop-opacity="0"/>
-      <stop offset="86%" stop-color="{CYAN}" stop-opacity="0.32"/>
+    <linearGradient id="ringGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="{CYAN}"/>
+      <stop offset="55%" stop-color="#7FE4FF"/>
+      <stop offset="100%" stop-color="{YELLOW}"/>
+    </linearGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="{CYAN}" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="{CYAN}" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="furGrad" cx="36%" cy="26%" r="80%">
-      <stop offset="0%" stop-color="{FUR_LIGHT}"/>
-      <stop offset="58%" stop-color="{CREAM}"/>
-      <stop offset="100%" stop-color="#EDD5AE"/>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="58%" stop-color="{CYAN}" stop-opacity="0"/>
+      <stop offset="86%" stop-color="{CYAN}" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="{CYAN}" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="tailGrad" cx="30%" cy="30%" r="85%">
-      <stop offset="0%" stop-color="#FFF8EA"/>
-      <stop offset="65%" stop-color="{CREAM}"/>
-      <stop offset="100%" stop-color="#E9CFA4"/>
+    <radialGradient id="furGrad" cx="34%" cy="26%" r="82%">
+      <stop offset="0%" stop-color="{CAT_LIGHT}"/>
+      <stop offset="58%" stop-color="{CAT_MID}"/>
+      <stop offset="100%" stop-color="{CAT_DARK}"/>
     </radialGradient>
-    <radialGradient id="irisGrad" cx="38%" cy="30%" r="74%">
-      <stop offset="0%" stop-color="#AEF2FF"/>
-      <stop offset="52%" stop-color="{CYAN}"/>
-      <stop offset="100%" stop-color="#0E7FAD"/>
+    <radialGradient id="bellyGrad" cx="50%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="{CAT_BELLY}"/>
     </radialGradient>
     <radialGradient id="cheekGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="{PINK}" stop-opacity="0.9"/>
+      <stop offset="0%" stop-color="{PINK}" stop-opacity="0.95"/>
       <stop offset="100%" stop-color="{PINK}" stop-opacity="0"/>
     </radialGradient>
     <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feGaussianBlur stdDeviation="7" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="textGlow" x="-40%" y="-40%" width="180%" height="180%">
@@ -96,7 +105,7 @@ def defs(extra: str = "") -> str:
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="starGlow" x="-120%" y="-120%" width="340%" height="340%">
-      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <path id="sparkle" d="M0,-6 Q1.1,-1.1 6,0 Q1.1,1.1 0,6 Q-1.1,1.1 -6,0 Q-1.1,-1.1 0,-6 Z"/>
@@ -115,37 +124,39 @@ def defs(extra: str = "") -> str:
 
 
 BASE_CSS = f""".f {{ font-family: {FONT}; }}
+    .m {{ font-family: {MONO}; }}
     .cat {{ animation: float 4.6s ease-in-out infinite; }}
-    .tail {{ transform-box: fill-box; transform-origin: 8% 86%; animation: swish 3.4s ease-in-out infinite; }}
+    .tail {{ transform-box: fill-box; transform-origin: 10% 85%; animation: swish 3.4s ease-in-out infinite; }}
     .earL {{ transform-box: fill-box; transform-origin: 50% 100%; animation: twitchL 7s ease-in-out infinite; }}
     .earR {{ transform-box: fill-box; transform-origin: 50% 100%; animation: twitchR 7s ease-in-out infinite; }}
     .eye {{ transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5.8s ease-in-out infinite; }}
-    .ringDash {{ animation: spin 26s linear infinite; }}
+    .ringDash {{ animation: spin 30s linear infinite; }}
+    .ringDot {{ animation: spin 22s linear infinite; }}
     .glowPulse {{ transform-box: fill-box; transform-origin: 50% 50%; animation: pulse 4.6s ease-in-out infinite; }}
     .breathe {{ transform-box: fill-box; transform-origin: 50% 90%; animation: breathe 3.8s ease-in-out infinite; }}
     .zz {{ transform-box: fill-box; transform-origin: 50% 100%; animation: zzz 3.4s ease-in-out infinite; }}
-    .wave {{ transform-box: fill-box; transform-origin: 20% 90%; animation: wave 1.9s ease-in-out infinite; }}
+    .wave {{ transform-box: fill-box; transform-origin: 22% 88%; animation: wave 1.9s ease-in-out infinite; }}
     .stA, .stB, .stC {{ transform-box: fill-box; transform-origin: 50% 50%;
                         animation: twinkle 3.6s ease-in-out infinite; }}
     .stB {{ animation-duration: 4.4s; animation-delay: -1.2s; }}
     .stC {{ animation-duration: 5.2s; animation-delay: -2.4s; }}
 
     @keyframes float {{ 0%,100% {{ transform: translateY(0); }} 50% {{ transform: translateY(-7px); }} }}
-    @keyframes swish {{ 0%,100% {{ transform: rotate(-8deg); }} 50% {{ transform: rotate(10deg); }} }}
+    @keyframes swish {{ 0%,100% {{ transform: rotate(-9deg); }} 50% {{ transform: rotate(11deg); }} }}
     @keyframes blink {{ 0%,91%,100% {{ transform: scaleY(1); }} 94% {{ transform: scaleY(0.08); }} 97% {{ transform: scaleY(1); }} }}
     @keyframes twitchL {{ 0%,86%,100% {{ transform: rotate(0); }} 90% {{ transform: rotate(8deg); }} 94% {{ transform: rotate(-3deg); }} }}
     @keyframes twitchR {{ 0%,88%,100% {{ transform: rotate(0); }} 92% {{ transform: rotate(-9deg); }} 96% {{ transform: rotate(3deg); }} }}
     @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
-    @keyframes pulse {{ 0%,100% {{ opacity: .55; transform: scale(1); }} 50% {{ opacity: 1; transform: scale(1.04); }} }}
+    @keyframes pulse {{ 0%,100% {{ opacity: .5; transform: scale(1); }} 50% {{ opacity: 1; transform: scale(1.05); }} }}
     @keyframes breathe {{ 0%,100% {{ transform: scale(1); }} 50% {{ transform: scale(1.035); }} }}
     @keyframes zzz {{ 0% {{ opacity: 0; transform: translateY(4px) scale(.8); }}
                       35% {{ opacity: 1; }}
                       100% {{ opacity: 0; transform: translateY(-14px) scale(1.15); }} }}
-    @keyframes wave {{ 0%,100% {{ transform: rotate(-16deg); }} 50% {{ transform: rotate(14deg); }} }}
-    @keyframes twinkle {{ 0%,100% {{ opacity: .5; transform: scale(.85); }} 50% {{ opacity: 1; transform: scale(1.2); }} }}
+    @keyframes wave {{ 0%,100% {{ transform: rotate(-18deg); }} 50% {{ transform: rotate(12deg); }} }}
+    @keyframes twinkle {{ 0%,100% {{ opacity: .45; transform: scale(.8); }} 50% {{ opacity: 1; transform: scale(1.2); }} }}
 
     @media (prefers-reduced-motion: reduce) {{
-      .cat, .tail, .earL, .earR, .eye, .ringDash, .glowPulse,
+      .cat, .tail, .earL, .earR, .eye, .ringDash, .ringDot, .glowPulse,
       .breathe, .zz, .wave, .stA, .stB, .stC {{ animation: none !important; }}
     }}"""
 
@@ -170,30 +181,32 @@ def svg_close() -> str:
 
 # ------------------------------------------------------------- backgrounds
 
-def panel(w: int, h: int, radius: int = 24) -> str:
-    return (
-        f'  <rect x="0" y="0" width="{w}" height="{h}" rx="{radius}" fill="url(#bgGrad)"/>\n'
-        f'  <rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="{radius - 1.5}" '
-        f'fill="none" stroke="{CYAN}" stroke-opacity="0.22" stroke-width="3"/>\n'
-    )
+def panel(w: int, h: int, radius: int = 24, horizon: bool = False) -> str:
+    s = (f'  <rect x="0" y="0" width="{w}" height="{h}" rx="{radius}" fill="url(#bgGrad)"/>\n')
+    if horizon:
+        # soft planet horizon arc, as in the reference banner
+        s += (f'  <ellipse cx="{w/2}" cy="{h + h*0.52:.0f}" rx="{w*0.78:.0f}" '
+              f'ry="{h*0.72:.0f}" fill="url(#horizonGlow)"/>\n'
+              f'  <path d="M{w*0.05:.0f},{h*0.93:.0f} Q{w/2},{h*0.76:.0f} '
+              f'{w*0.95:.0f},{h*0.93:.0f}" fill="none" stroke="{CYAN}" '
+              f'stroke-opacity=".24" stroke-width="2"/>\n')
+    s += (f'  <rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="{radius - 1.5}" '
+          f'fill="none" stroke="{CYAN}" stroke-opacity="0.22" stroke-width="3"/>\n')
+    return s
 
 
-def card(x: float, y: float, w: float, h: float, radius: int = 18,
-         stroke: str = CYAN, opacity: float = 0.30) -> str:
-    return (
-        f'  <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{CARD}" '
-        f'stroke="{stroke}" stroke-opacity="{opacity}" stroke-width="2"/>\n'
-    )
+def card(x, y, w, h, radius: int = 18, stroke: str = CYAN,
+         opacity: float = 0.30) -> str:
+    return (f'  <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{CARD}" '
+            f'stroke="{stroke}" stroke-opacity="{opacity}" stroke-width="2"/>\n')
 
 
 def stars(w: int, h: int, count: int = 12, seed: int = 7,
           avoid: tuple | None = None) -> str:
-    """Scatter twinkling sparkles, optionally avoiding a rect (x,y,w,h)."""
     rnd = random.Random(seed)
-    colors = [CREAM, CYAN, YELLOW, CREAM, PINK]
+    colors = [CREAM, CYAN, YELLOW, "#FFFFFF", PINK]
     classes = ["stA", "stB", "stC"]
-    rows, placed = [], 0
-    guard = 0
+    rows, placed, guard = [], 0, 0
     while placed < count and guard < count * 40:
         guard += 1
         x = rnd.randint(18, w - 18)
@@ -202,168 +215,190 @@ def stars(w: int, h: int, count: int = 12, seed: int = 7,
             ax, ay, aw, ah = avoid
             if ax - 14 <= x <= ax + aw + 14 and ay - 14 <= y <= ay + ah + 14:
                 continue
-        sc = round(rnd.uniform(0.55, 1.05), 2)
-        col = colors[placed % len(colors)]
-        cls = classes[placed % 3]
-        # outer group = placement, inner group = animation (never conflict)
+        sc = round(rnd.uniform(0.5, 1.0), 2)
         rows.append(
-            f'    <g transform="translate({x},{y}) scale({sc})" fill="{col}">'
-            f'<g class="{cls}"><use href="#sparkle"/></g></g>'
-        )
+            f'    <g transform="translate({x},{y}) scale({sc})" fill="{colors[placed % 5]}">'
+            f'<g class="{classes[placed % 3]}"><use href="#sparkle"/></g></g>')
         placed += 1
     return '  <g filter="url(#starGlow)">\n' + "\n".join(rows) + "\n  </g>\n"
 
 
+def star_dots(w: int, h: int, count: int = 22, seed: int = 5,
+              avoid: tuple | None = None) -> str:
+    """Plain twinkling dots, as on the reference banner (not 4-point stars)."""
+    rnd = random.Random(seed)
+    classes = ["stA", "stB", "stC"]
+    rows, placed, guard = [], 0, 0
+    while placed < count and guard < count * 40:
+        guard += 1
+        x = rnd.randint(14, w - 14)
+        y = rnd.randint(14, h - 14)
+        if avoid:
+            ax, ay, aw, ah = avoid
+            if ax - 10 <= x <= ax + aw + 10 and ay - 10 <= y <= ay + ah + 10:
+                continue
+        r = round(rnd.uniform(0.9, 2.1), 1)
+        col = "#FFFFFF" if placed % 4 else CYAN
+        op = round(rnd.uniform(0.35, 0.9), 2)
+        rows.append(
+            f'    <g transform="translate({x},{y})"><g class="{classes[placed % 3]}">'
+            f'<circle cx="0" cy="0" r="{r}" fill="{col}" opacity="{op}"/></g></g>')
+        placed += 1
+    return "  <g>\n" + "\n".join(rows) + "\n  </g>\n"
+
+
+def orbit_ring(cx: float, cy: float, r: float, dots: int = 4) -> str:
+    """Glowing gradient ring with small travelling dots, as in the reference."""
+    s = (f'  <circle cx="{cx}" cy="{cy}" r="{r * 1.26:.0f}" fill="url(#ringGlow)" class="glowPulse"/>\n'
+         f'  <circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="url(#ringGrad)" '
+         f'stroke-width="5" stroke-linecap="round" filter="url(#softGlow)"/>\n'
+         f'  <g transform="translate({cx},{cy})"><g class="ringDash">'
+         f'<circle cx="0" cy="0" r="{r + 13:.0f}" fill="none" stroke="{YELLOW}" '
+         f'stroke-opacity=".5" stroke-width="2" stroke-dasharray="2 14" '
+         f'stroke-linecap="round"/></g></g>\n')
+    import math
+    inner = []
+    for i in range(dots):
+        a = (2 * math.pi * i) / dots
+        dx, dy = r * math.cos(a), r * math.sin(a)
+        col = YELLOW if i % 2 else CYAN
+        inner.append(f'<circle cx="{dx:.1f}" cy="{dy:.1f}" r="{5 if i % 2 else 4}" '
+                     f'fill="{col}"/>')
+    s += (f'  <g transform="translate({cx},{cy})"><g class="ringDot">'
+          + "".join(inner) + "</g></g>\n")
+    return s
+
+
 # -------------------------------------------------------------- the mascot
 
-def _eyes_open() -> str:
+def _eyes(mood: str) -> str:
+    if mood == "sleepy":
+        return (f'      <path d="M-26,-8 C-22,-1 -12,-1 -8,-8" fill="none" stroke="{CAT_LINE}" '
+                f'stroke-width="3" stroke-linecap="round"/>\n'
+                f'      <path d="M8,-8 C12,-1 22,-1 26,-8" fill="none" stroke="{CAT_LINE}" '
+                f'stroke-width="3" stroke-linecap="round"/>')
     out = []
-    for sx in (-13, 13):
-        hx1 = sx - 2.7 if sx < 0 else sx - 2.7
-        hx2 = sx + 2.7
+    for sx in (-17, 17):
         out.append(f"""      <g class="eye">
-        <ellipse cx="{sx}" cy="-28" rx="8.8" ry="9.8" fill="{BG}"/>
-        <ellipse cx="{sx}" cy="-27" rx="6.8" ry="7.8" fill="url(#irisGrad)"/>
-        <circle cx="{sx}" cy="-26.5" r="3.5" fill="#06182E"/>
-        <circle cx="{hx1}" cy="-30.6" r="2.6" fill="{TEXT}"/>
-        <circle cx="{hx2}" cy="-23.6" r="1.4" fill="{TEXT}" opacity=".85"/>
+        <ellipse cx="{sx}" cy="-7" rx="11" ry="12.5" fill="#FFFFFF"/>
+        <ellipse cx="{sx}" cy="-6" rx="6.6" ry="7.8" fill="#0B2B42"/>
+        <circle cx="{sx - 2.6}" cy="-10.2" r="3.1" fill="#FFFFFF"/>
+        <circle cx="{sx + 3.0}" cy="-1.8" r="1.6" fill="#FFFFFF" opacity=".9"/>
       </g>""")
     return "\n".join(out)
 
 
-def _eyes_closed() -> str:
-    return f"""      <path d="M-20,-28 C-17,-23 -9,-23 -6,-28" fill="none"
-            stroke="{NOSE_LINE}" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M6,-28 C9,-23 17,-23 20,-28" fill="none"
-            stroke="{NOSE_LINE}" stroke-width="2.2" stroke-linecap="round"/>"""
+def _blob_face(mood: str) -> str:
+    """Face only: big eyes, blush, small smile. No whiskers, matching the
+    reference art, which keeps the silhouette clean at small sizes."""
+    return f"""{_eyes(mood)}
+      <ellipse cx="-31" cy="9" rx="11" ry="7" fill="url(#cheekGrad)"/>
+      <ellipse cx="31" cy="9" rx="11" ry="7" fill="url(#cheekGrad)"/>
+      <path d="M-7,10 C-4,14.5 4,14.5 7,10" fill="none" stroke="{CAT_LINE}"
+            stroke-width="2.2" stroke-linecap="round"/>"""
 
-
-def _face(mood: str) -> str:
-    eyes = _eyes_closed() if mood == "sleepy" else _eyes_open()
-    smile = (f'      <path d="M0,-13 L0,-10 M0,-10 C-2.6,-10 -4.4,-11.6 -4.6,-13.4 '
-             f'M0,-10 C2.6,-10 4.4,-11.6 4.6,-13.4" fill="none" '
-             f'stroke="{NOSE_LINE}" stroke-width="1.5" stroke-linecap="round"/>')
-    return f"""      <ellipse cx="-22" cy="-16" rx="10.5" ry="7.2" fill="url(#cheekGrad)"/>
-      <ellipse cx="22" cy="-16" rx="10.5" ry="7.2" fill="url(#cheekGrad)"/>
-{eyes}
-      <path d="M0,-13 L-3.4,-16.4 L3.4,-16.4 Z" fill="{PINK}" stroke="#F08097"
-            stroke-width=".7" stroke-linejoin="round"/>
-{smile}
-      <g stroke="{FUR_LIGHT}" stroke-width="1.6" stroke-linecap="round" opacity=".92" fill="none">
-        <path d="M-17,-15 C-28,-18 -37,-18 -46,-16"/>
-        <path d="M-17,-10 C-28,-10 -37,-9 -46,-6"/>
-        <path d="M17,-15 C28,-18 37,-18 46,-16"/>
-        <path d="M17,-10 C28,-10 37,-9 46,-6"/>
-      </g>"""
-
-
-_HEAD = f"""      <path d="M0,-62 C19,-62 34,-50 37,-34 C39,-23 38,-13 33,-6
-               C28,2 15,7 0,7 C-15,7 -28,2 -33,-6
-               C-38,-13 -39,-23 -37,-34 C-34,-50 -19,-62 0,-62 Z"
-            fill="url(#furGrad)" stroke="{FUR_LINE}" stroke-width="1.9" stroke-linejoin="round"/>
-      <path d="M-9,-58 C-5,-66 -1,-67 2,-60 C4,-66 9,-64 10,-58 C5,-61 -3,-61 -9,-58 Z" fill="{FUR_LIGHT}"/>"""
 
 _EARS = f"""      <g class="earL">
-        <path d="M-33,-48 C-38,-66 -35,-82 -28,-85 C-21,-82 -14,-68 -11,-54 Z"
-              fill="url(#furGrad)" stroke="{FUR_LINE}" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M-30,-52 C-33,-65 -30,-75 -26,-77 C-22,-74 -18,-65 -16,-56 Z" fill="{PINK}" opacity=".8"/>
+        <path d="M-40,-24 C-46,-44 -40,-57 -30,-56 C-23,-54 -18,-43 -15,-32 Z"
+              fill="{CAT_MID}" stroke="{CAT_LINE}" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M-36,-29 C-40,-42 -35,-50 -30,-49 C-26,-47 -23,-40 -21,-34 Z"
+              fill="{CAT_LIGHT}" opacity=".95"/>
       </g>
       <g class="earR">
-        <path d="M33,-48 C38,-66 35,-82 28,-85 C21,-82 14,-68 11,-54 Z"
-              fill="url(#furGrad)" stroke="{FUR_LINE}" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M30,-52 C33,-65 30,-75 26,-77 C22,-74 18,-65 16,-56 Z" fill="{PINK}" opacity=".8"/>
+        <path d="M40,-24 C46,-44 40,-57 30,-56 C23,-54 18,-43 15,-32 Z"
+              fill="{CAT_MID}" stroke="{CAT_LINE}" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M36,-29 C40,-42 35,-50 30,-49 C26,-47 23,-40 21,-34 Z"
+              fill="{CAT_LIGHT}" opacity=".95"/>
       </g>"""
 
-_BODY = f"""      <path d="M-30,22 C-30,2 -16,-10 0,-10 C16,-10 30,2 30,22
-               C30,34 24,43 16,46 C12,43 9,46 5,47 C1,48 -3,45 -7,47
-               C-12,49 -17,44 -21,45 C-27,42 -30,32 -30,22 Z"
-            fill="url(#furGrad)" stroke="{FUR_LINE}" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M-11,14 C-6,22 6,22 11,14 C9,26 -9,26 -11,14 Z" fill="{FUR_LIGHT}" opacity=".85"/>
-      <ellipse cx="-11" cy="44" rx="8" ry="5.5" fill="{FUR_LIGHT}" stroke="{FUR_LINE}" stroke-width="1.4"/>
-      <ellipse cx="11" cy="44" rx="8" ry="5.5" fill="{FUR_LIGHT}" stroke="{FUR_LINE}" stroke-width="1.4"/>"""
+# One round blob: head and body are a single ball, as in the reference art.
+_BLOB = f"""      <ellipse cx="0" cy="48" rx="40" ry="8" fill="#031120" opacity=".45"/>
+      <path d="M0,-44 C31,-44 53,-24 53,2 C53,28 33,47 0,47
+                C-33,47 -53,28 -53,2 C-53,-24 -31,-44 0,-44 Z"
+            fill="url(#furGrad)" stroke="{CAT_LINE}" stroke-width="2.2" stroke-linejoin="round"/>
+      <ellipse cx="-18" cy="-20" rx="16" ry="11" fill="#FFFFFF" opacity=".16"/>"""
+
+_PAWS = f"""      <ellipse cx="-17" cy="45" rx="10" ry="6" fill="{CAT_MID}"
+               stroke="{CAT_LINE}" stroke-width="1.6"/>
+      <ellipse cx="17" cy="45" rx="10" ry="6" fill="{CAT_MID}"
+               stroke="{CAT_LINE}" stroke-width="1.6"/>"""
 
 _TAIL = f"""      <g class="tail">
-        <path d="M20,30 C44,36 62,28 68,10 C73,-6 66,-20 54,-23 C44,-25 36,-18 36,-9
-                 C36,-2 41,3 47,3 C51,3 54,1 55,-3 C57,9 46,19 22,17 Z"
-              fill="url(#tailGrad)" stroke="{FUR_LINE}" stroke-width="1.6" stroke-linejoin="round"/>
-        <path d="M62,-13 C67,-6 66,4 61,10" fill="none" stroke="{FUR_LINE}"
-              stroke-width="1.4" stroke-linecap="round" stroke-opacity=".75"/>
-        <path d="M52,-19 C58,-16 61,-10 61,-4" fill="none" stroke="{FUR_LIGHT}"
-              stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/>
+        <path d="M40,30 C64,34 80,22 82,2 C83,-12 74,-22 63,-22 C54,-22 48,-15 48,-7
+                 C48,0 53,4 58,4 C62,4 65,2 66,-2 C68,10 58,20 42,19 Z"
+              fill="url(#furGrad)" stroke="{CAT_LINE}" stroke-width="1.9" stroke-linejoin="round"/>
+        <path d="M70,-16 C76,-10 76,2 70,8" fill="none" stroke="{CAT_BELLY}"
+              stroke-width="2" stroke-linecap="round" stroke-opacity=".8"/>
       </g>"""
 
 
 def cat(pose: str = "sitting", mood: str = "happy", scale: float = 1.0,
         x: float = 0, y: float = 0, animate: bool = True) -> str:
-    """The mascot. Same character in every pose; only the arrangement changes.
-
-    Poses: sitting, sleeping, peeking, playing.
-    Moods: happy, sleepy.
-    """
+    """The mascot: a round, chubby blue cat. Same character in every pose."""
     cls = ' class="cat"' if animate else ""
 
     if pose == "sleeping":
         inner = f"""      <g class="breathe">
-        <ellipse cx="0" cy="12" rx="46" ry="30" fill="url(#furGrad)"
-                 stroke="{FUR_LINE}" stroke-width="1.8"/>
-        <path d="M42,20 C58,16 64,2 56,-6 C50,-12 42,-9 41,-2 C40,4 44,8 48,7
-                 C45,14 38,17 30,17 Z" fill="url(#tailGrad)" stroke="{FUR_LINE}"
-              stroke-width="1.6" stroke-linejoin="round"/>
-        <g transform="translate(-14,-2) scale(.82)">
-          <path d="M-30,-20 C-33,-34 -30,-46 -24,-48 C-18,-45 -13,-34 -11,-24 Z"
-                fill="url(#furGrad)" stroke="{FUR_LINE}" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M-27,-24 C-29,-34 -26,-41 -23,-42 C-20,-40 -17,-33 -16,-26 Z" fill="{PINK}" opacity=".8"/>
-          <path d="M24,-22 C29,-36 26,-48 20,-50 C14,-47 9,-36 7,-26 Z"
-                fill="url(#furGrad)" stroke="{FUR_LINE}" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M21,-26 C23,-36 20,-43 17,-44 C14,-42 11,-35 10,-28 Z" fill="{PINK}" opacity=".8"/>
-          <ellipse cx="-2" cy="-2" rx="34" ry="30" fill="url(#furGrad)"
-                   stroke="{FUR_LINE}" stroke-width="1.9"/>
-          <ellipse cx="-20" cy="6" rx="9" ry="6" fill="url(#cheekGrad)"/>
-          <ellipse cx="16" cy="6" rx="9" ry="6" fill="url(#cheekGrad)"/>
-          <path d="M-20,-4 C-17,1 -9,1 -6,-4" fill="none" stroke="{NOSE_LINE}"
-                stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M4,-4 C7,1 15,1 18,-4" fill="none" stroke="{NOSE_LINE}"
-                stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M-1,10 L-4.4,6.6 L2.4,6.6 Z" fill="{PINK}"/>
+        <ellipse cx="0" cy="14" rx="56" ry="34" fill="url(#furGrad)"
+                 stroke="{CAT_LINE}" stroke-width="2.1"/>
+        <ellipse cx="4" cy="24" rx="30" ry="17" fill="url(#bellyGrad)" opacity=".85"/>
+        <path d="M50,24 C70,18 76,2 66,-6 C58,-12 49,-8 48,0 C47,7 52,11 57,10
+                 C53,18 44,22 36,21 Z" fill="url(#furGrad)" stroke="{CAT_LINE}"
+              stroke-width="1.9" stroke-linejoin="round"/>
+        <g transform="translate(-16,-6) scale(.86)">
+          <path d="M-38,-16 C-43,-34 -38,-46 -30,-46 C-23,-44 -18,-33 -15,-22 Z"
+                fill="url(#furGrad)" stroke="{CAT_LINE}" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M26,-18 C31,-36 26,-48 18,-48 C11,-46 6,-35 3,-24 Z"
+                fill="url(#furGrad)" stroke="{CAT_LINE}" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="-6" cy="2" rx="40" ry="35" fill="url(#furGrad)"
+                   stroke="{CAT_LINE}" stroke-width="2.2"/>
+          <ellipse cx="-30" cy="12" rx="10" ry="6.6" fill="url(#cheekGrad)"/>
+          <ellipse cx="18" cy="12" rx="10" ry="6.6" fill="url(#cheekGrad)"/>
+          <path d="M-28,0 C-24,7 -14,7 -10,0" fill="none" stroke="{CAT_LINE}"
+                stroke-width="3" stroke-linecap="round"/>
+          <path d="M2,0 C6,7 16,7 20,0" fill="none" stroke="{CAT_LINE}"
+                stroke-width="3" stroke-linecap="round"/>
+          <path d="M-5,16 L-8.6,12.2 L-1.4,12.2 Z" fill="{PINK}"/>
         </g>
       </g>
-      <g class="f" fill="{CYAN}" opacity=".9">
-        <g class="zz"><text x="40" y="-44" font-size="17" font-weight="700">z</text></g>
-        <g class="zz" style="animation-delay:-1.1s"><text x="54" y="-56" font-size="13" font-weight="700">z</text></g>
-        <g class="zz" style="animation-delay:-2.2s"><text x="66" y="-66" font-size="10" font-weight="700">z</text></g>
+      <g class="f" fill="{CYAN}" opacity=".92">
+        <g class="zz"><text x="56" y="-44" font-size="19" font-weight="700">z</text></g>
+        <g class="zz" style="animation-delay:-1.1s"><text x="72" y="-58" font-size="14" font-weight="700">z</text></g>
+        <g class="zz" style="animation-delay:-2.2s"><text x="86" y="-70" font-size="11" font-weight="700">z</text></g>
       </g>"""
 
     elif pose == "peeking":
         inner = f"""{_TAIL}
 {_EARS}
-{_HEAD}
-{_face(mood)}
-      <ellipse cx="-26" cy="14" rx="9" ry="6" fill="{FUR_LIGHT}" stroke="{FUR_LINE}" stroke-width="1.4"/>
-      <ellipse cx="26" cy="14" rx="9" ry="6" fill="{FUR_LIGHT}" stroke="{FUR_LINE}" stroke-width="1.4"/>
-      <rect x="-54" y="18" width="108" height="9" rx="4.5" fill="{CYAN}" opacity=".55"/>"""
+{_BLOB}
+{_blob_face(mood)}
+      <ellipse cx="-34" cy="40" rx="12" ry="8" fill="url(#bellyGrad)"
+               stroke="{CAT_LINE}" stroke-width="1.6"/>
+      <ellipse cx="34" cy="40" rx="12" ry="8" fill="url(#bellyGrad)"
+               stroke="{CAT_LINE}" stroke-width="1.6"/>
+      <rect x="-72" y="44" width="144" height="11" rx="5.5" fill="{CYAN}" opacity=".55"/>"""
 
     elif pose == "playing":
-        inner = f"""      <g transform="rotate(-9)">
+        inner = f"""      <g transform="rotate(-8)">
 {_TAIL}
 {_EARS}
-{_HEAD}
-{_face(mood)}
-{_BODY}
+{_BLOB}
+{_blob_face(mood)}
+{_PAWS}
       </g>
       <g class="wave">
-        <ellipse cx="-36" cy="4" rx="9" ry="7" fill="{FUR_LIGHT}"
-                 stroke="{FUR_LINE}" stroke-width="1.5" transform="rotate(-24 -36 4)"/>
+        <ellipse cx="-54" cy="2" rx="12" ry="8.5" fill="url(#bellyGrad)"
+                 stroke="{CAT_LINE}" stroke-width="1.7" transform="rotate(-26 -54 2)"/>
       </g>
-      <circle cx="46" cy="40" r="11" fill="{YELLOW}" opacity=".92"/>
-      <path d="M38,40 C42,34 50,34 54,40 M38,40 C42,46 50,46 54,40" fill="none"
-            stroke="#B98F10" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>"""
+      <circle cx="62" cy="40" r="13" fill="{YELLOW}" opacity=".95"/>
+      <path d="M52,40 C56,33 68,33 72,40 M52,40 C56,47 68,47 72,40" fill="none"
+            stroke="#B98F10" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>"""
 
-    else:  # sitting
-        inner = f"""{_TAIL}
-{_EARS}
-{_BODY}
-{_HEAD}
-{_face(mood)}"""
+    else:  # sitting - the banner pose, kept tail-free like the reference
+        inner = f"""{_EARS}
+{_BLOB}
+{_blob_face(mood)}
+{_PAWS}"""
 
     return (f'  <g transform="translate({x},{y}) scale({scale})">\n'
             f'    <g{cls}>\n{inner}\n    </g>\n  </g>\n')
@@ -372,15 +407,31 @@ def cat(pose: str = "sitting", mood: str = "happy", scale: float = 1.0,
 # --------------------------------------------------------------- text bits
 
 def text(x, y, s, size=16, fill=TEXT, weight="400", anchor="start",
-         spacing=0, extra=""):
+         spacing=0, extra="", mono=False):
     a = f' text-anchor="{anchor}"' if anchor != "start" else ""
     ls = f' letter-spacing="{spacing}"' if spacing else ""
+    cls = "m" if mono else "f"
     return (f'  <text x="{x}" y="{y}" fill="{fill}" font-size="{size}" '
-            f'font-weight="{weight}"{a}{ls} class="f"{extra}>{esc(s)}</text>\n')
+            f'font-weight="{weight}"{a}{ls} class="{cls}"{extra}>{esc(s)}</text>\n')
+
+
+def badge_pill(x, y, label, color, h=28, size=12.5, pad=14, dot=True):
+    """A small chip: coloured dot plus label, as under the reference cat."""
+    w = pad * 2 + (16 if dot else 0) + len(label) * size * 0.56
+    s = (f'  <g>\n'
+         f'    <rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{h}" rx="{h/2}" '
+         f'fill="{color}" fill-opacity="0.14" stroke="{color}" stroke-opacity="0.7" '
+         f'stroke-width="1.3"/>\n')
+    tx = x + pad
+    if dot:
+        s += f'    <rect x="{tx:.1f}" y="{y + h/2 - 4.5:.1f}" width="9" height="9" rx="2.5" fill="{color}"/>\n'
+        tx += 16
+    s += (f'    <text x="{tx:.1f}" y="{y + h/2 + 4.3:.1f}" fill="{color}" font-size="{size}" '
+          f'font-weight="600" class="f">{esc(label)}</text>\n  </g>\n')
+    return s, w
 
 
 def pill(x, y, label, idx, h=30, pad=15, size=13.5):
-    """Tech-stack pill, alternating cyan and yellow."""
     accent = CYAN if idx % 2 == 0 else YELLOW
     w = pad * 2 + len(label) * size * 0.58
     return (
@@ -394,8 +445,7 @@ def pill(x, y, label, idx, h=30, pad=15, size=13.5):
 
 
 def flow_pills(labels, x0, y0, max_w, gap=9, line_h=39):
-    """Lay pills out in wrapping rows. Returns (svg, total_height)."""
-    out, x, y, start = [], x0, y0, 0
+    out, x, y = [], x0, y0
     for i, lab in enumerate(labels):
         s, w = pill(x, y, lab, i)
         if x + w > x0 + max_w and x > x0:
@@ -409,8 +459,7 @@ def flow_pills(labels, x0, y0, max_w, gap=9, line_h=39):
 
 def paw_row(x, y, n=3, scale=0.9, gap=28):
     cols = [PINK, CYAN, YELLOW]
-    out = []
-    for i in range(n):
-        out.append(f'  <g transform="translate({x + i*gap},{y}) scale({scale})" '
-                   f'fill="{cols[i % 3]}" opacity=".9"><use href="#paw"/></g>\n')
-    return "".join(out)
+    return "".join(
+        f'  <g transform="translate({x + i*gap},{y}) scale({scale})" '
+        f'fill="{cols[i % 3]}" opacity=".9"><use href="#paw"/></g>\n'
+        for i in range(n))

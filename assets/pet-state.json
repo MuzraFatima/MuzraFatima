@@ -1,11 +1,19 @@
 {
-  "total": 386,
-  "last7": 27,
+  "name": "Muzra Fatima",
+  "bio": "AI/ML Engineer | Multi-Agent Systems, LLMs & Reinforcement Learning | Python \u2022 FastAPI",
+  "followers": 1,
+  "repo_count": 10,
+  "stars": 0,
+  "total": 387,
+  "last7": 28,
   "mood": "happy",
   "stage": "young",
   "pose": "sitting",
-  "stage_label": "Young cat",
+  "stage_label": "Young",
   "weeks_active": 8,
+  "streak": 1,
+  "active_52": 10,
+  "fed": 1,
   "langs": [
     {
       "name": "Python",
@@ -31,15 +39,319 @@
       "name": "CSS",
       "color": "#663399",
       "pct": 1.7066238321309484
-    },
-    {
-      "name": "TeX",
-      "color": "#3D6117",
-      "pct": 0.29473185676972075
     }
   ],
+  "repos": [
+    {
+      "name": "portfolio",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "lang": "TypeScript",
+      "lang_color": "#3178c6"
+    },
+    {
+      "name": "AstroLM",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    },
+    {
+      "name": "HorizonGuard",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    },
+    {
+      "name": "Compute-bazar",
+      "desc": "Multi-agent compute resource allocation using combinatorial auctions for cost-efficient and fair AI workload scheduling.",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    },
+    {
+      "name": "jocky-forensics",
+      "desc": "JOCKY \u2014 A Domain-Specific Digital Forensic Investigation Framework",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    },
+    {
+      "name": "NeuroLens",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    },
+    {
+      "name": "WhoToTrust",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    },
+    {
+      "name": "Prediction-to-Smartphone-Addiction",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "lang": "JavaScript",
+      "lang_color": "#f1e05a"
+    },
+    {
+      "name": "Cost-aware-agent",
+      "desc": "Cost-aware multi-agent LLM routing using dynamic complexity and confidence-based agent selection for reliable AI systems.",
+      "stars": 0,
+      "forks": 0,
+      "lang": "Python",
+      "lang_color": "#3572A5"
+    }
+  ],
+  "care": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      5
+    ],
+    [
+      38,
+      1,
+      22,
+      15,
+      84,
+      59,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      106,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      28
+    ]
+  ],
   "last_day": "2026-11-27",
-  "generated": "2026-11-27 17:18 UTC",
+  "generated": "2026-11-27 17:42 UTC",
   "week_active": [
     false,
     true,

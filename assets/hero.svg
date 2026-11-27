@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 280" width="880" height="280" role="img" aria-labelledby="t d">
-  <title id="t">Code Pet. Muzra Fatima, Aspiring AI/ML Engineer</title>
-  <desc id="d">A fluffy cream cat mascot with big sparkly cyan eyes, pink cheeks, upright ears and a bushy tail, floating inside a glowing cyan ring on a deep navy starfield, beside the heading CODE PET at MuzraFatima, the name Muzra Fatima, and the title Aspiring AI/ML Engineer.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 392" width="880" height="392" role="img" aria-labelledby="t d">
+  <title id="t">Code Pet. Muzra Fatima, @MuzraFatima</title>
+  <desc id="d">A round blue cat mascot with big eyes and pink cheeks sitting on a starfield. Streak 1 of 13 weeks. 387 contributions this year, stage young. 10 of 52 weeks active. Top languages: Python, JavaScript, TypeScript, HTML.</desc>
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#071A33"/>
-      <stop offset="55%" stop-color="#0B2140"/>
-      <stop offset="100%" stop-color="#0E2A4D"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#061629"/>
+      <stop offset="55%" stop-color="#071A33"/>
+      <stop offset="100%" stop-color="#0B2946"/>
     </linearGradient>
-    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="58%" stop-color="#35D6FF" stop-opacity="0"/>
-      <stop offset="86%" stop-color="#35D6FF" stop-opacity="0.32"/>
+    <linearGradient id="ringGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#35D6FF"/>
+      <stop offset="55%" stop-color="#7FE4FF"/>
+      <stop offset="100%" stop-color="#FFD54A"/>
+    </linearGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#35D6FF" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="furGrad" cx="36%" cy="26%" r="80%">
-      <stop offset="0%" stop-color="#FFFBF2"/>
-      <stop offset="58%" stop-color="#FFF0D6"/>
-      <stop offset="100%" stop-color="#EDD5AE"/>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="58%" stop-color="#35D6FF" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#35D6FF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="tailGrad" cx="30%" cy="30%" r="85%">
-      <stop offset="0%" stop-color="#FFF8EA"/>
-      <stop offset="65%" stop-color="#FFF0D6"/>
-      <stop offset="100%" stop-color="#E9CFA4"/>
+    <radialGradient id="furGrad" cx="34%" cy="26%" r="82%">
+      <stop offset="0%" stop-color="#7FD9FB"/>
+      <stop offset="58%" stop-color="#45BCF0"/>
+      <stop offset="100%" stop-color="#1F93CC"/>
     </radialGradient>
-    <radialGradient id="irisGrad" cx="38%" cy="30%" r="74%">
-      <stop offset="0%" stop-color="#AEF2FF"/>
-      <stop offset="52%" stop-color="#35D6FF"/>
-      <stop offset="100%" stop-color="#0E7FAD"/>
+    <radialGradient id="bellyGrad" cx="50%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D6F2FE"/>
     </radialGradient>
     <radialGradient id="cheekGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF9FB2" stop-opacity="0.9"/>
+      <stop offset="0%" stop-color="#FF9FB2" stop-opacity="0.95"/>
       <stop offset="100%" stop-color="#FF9FB2" stop-opacity="0"/>
     </radialGradient>
     <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feGaussianBlur stdDeviation="7" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="textGlow" x="-40%" y="-40%" width="180%" height="180%">
@@ -41,7 +44,7 @@
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="starGlow" x="-120%" y="-120%" width="340%" height="340%">
-      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <path id="sparkle" d="M0,-6 Q1.1,-1.1 6,0 Q1.1,1.1 0,6 Q-1.1,1.1 -6,0 Q-1.1,-1.1 0,-6 Z"/>
@@ -58,125 +61,154 @@
   </defs>
   <style>
     .f { font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+    .m { font-family: ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
     .cat { animation: float 4.6s ease-in-out infinite; }
-    .tail { transform-box: fill-box; transform-origin: 8% 86%; animation: swish 3.4s ease-in-out infinite; }
+    .tail { transform-box: fill-box; transform-origin: 10% 85%; animation: swish 3.4s ease-in-out infinite; }
     .earL { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchL 7s ease-in-out infinite; }
     .earR { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchR 7s ease-in-out infinite; }
     .eye { transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5.8s ease-in-out infinite; }
-    .ringDash { animation: spin 26s linear infinite; }
+    .ringDash { animation: spin 30s linear infinite; }
+    .ringDot { animation: spin 22s linear infinite; }
     .glowPulse { transform-box: fill-box; transform-origin: 50% 50%; animation: pulse 4.6s ease-in-out infinite; }
     .breathe { transform-box: fill-box; transform-origin: 50% 90%; animation: breathe 3.8s ease-in-out infinite; }
     .zz { transform-box: fill-box; transform-origin: 50% 100%; animation: zzz 3.4s ease-in-out infinite; }
-    .wave { transform-box: fill-box; transform-origin: 20% 90%; animation: wave 1.9s ease-in-out infinite; }
+    .wave { transform-box: fill-box; transform-origin: 22% 88%; animation: wave 1.9s ease-in-out infinite; }
     .stA, .stB, .stC { transform-box: fill-box; transform-origin: 50% 50%;
                         animation: twinkle 3.6s ease-in-out infinite; }
     .stB { animation-duration: 4.4s; animation-delay: -1.2s; }
     .stC { animation-duration: 5.2s; animation-delay: -2.4s; }
 
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-    @keyframes swish { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
+    @keyframes swish { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(11deg); } }
     @keyframes blink { 0%,91%,100% { transform: scaleY(1); } 94% { transform: scaleY(0.08); } 97% { transform: scaleY(1); } }
     @keyframes twitchL { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(8deg); } 94% { transform: rotate(-3deg); } }
     @keyframes twitchR { 0%,88%,100% { transform: rotate(0); } 92% { transform: rotate(-9deg); } 96% { transform: rotate(3deg); } }
     @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes pulse { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+    @keyframes pulse { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
     @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
     @keyframes zzz { 0% { opacity: 0; transform: translateY(4px) scale(.8); }
                       35% { opacity: 1; }
                       100% { opacity: 0; transform: translateY(-14px) scale(1.15); } }
-    @keyframes wave { 0%,100% { transform: rotate(-16deg); } 50% { transform: rotate(14deg); } }
-    @keyframes twinkle { 0%,100% { opacity: .5; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.2); } }
+    @keyframes wave { 0%,100% { transform: rotate(-18deg); } 50% { transform: rotate(12deg); } }
+    @keyframes twinkle { 0%,100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
 
     @media (prefers-reduced-motion: reduce) {
-      .cat, .tail, .earL, .earR, .eye, .ringDash, .glowPulse,
+      .cat, .tail, .earL, .earR, .eye, .ringDash, .ringDot, .glowPulse,
       .breathe, .zz, .wave, .stA, .stB, .stC { animation: none !important; }
     }
   </style>
-  <rect x="0" y="0" width="880" height="280" rx="28" fill="url(#bgGrad)"/>
-  <rect x="1.5" y="1.5" width="877" height="277" rx="26.5" fill="none" stroke="#35D6FF" stroke-opacity="0.22" stroke-width="3"/>
-  <g filter="url(#starGlow)">
-    <g transform="translate(349,258) scale(0.63)" fill="#FFF0D6"><g class="stA"><use href="#sparkle"/></g></g>
-    <g transform="translate(684,28) scale(0.59)" fill="#35D6FF"><g class="stB"><use href="#sparkle"/></g></g>
-    <g transform="translate(566,40) scale(0.73)" fill="#FFD54A"><g class="stC"><use href="#sparkle"/></g></g>
-    <g transform="translate(537,70) scale(0.57)" fill="#FFF0D6"><g class="stA"><use href="#sparkle"/></g></g>
-    <g transform="translate(462,123) scale(0.58)" fill="#FF9FB2"><g class="stB"><use href="#sparkle"/></g></g>
-    <g transform="translate(452,31) scale(0.96)" fill="#FFF0D6"><g class="stC"><use href="#sparkle"/></g></g>
-    <g transform="translate(660,165) scale(1.02)" fill="#35D6FF"><g class="stA"><use href="#sparkle"/></g></g>
-    <g transform="translate(608,165) scale(0.75)" fill="#FFD54A"><g class="stB"><use href="#sparkle"/></g></g>
-    <g transform="translate(588,235) scale(0.62)" fill="#FFF0D6"><g class="stC"><use href="#sparkle"/></g></g>
-    <g transform="translate(447,52) scale(0.82)" fill="#FF9FB2"><g class="stA"><use href="#sparkle"/></g></g>
-    <g transform="translate(602,94) scale(0.83)" fill="#FFF0D6"><g class="stB"><use href="#sparkle"/></g></g>
-    <g transform="translate(716,62) scale(0.6)" fill="#35D6FF"><g class="stC"><use href="#sparkle"/></g></g>
-    <g transform="translate(602,179) scale(0.64)" fill="#FFD54A"><g class="stA"><use href="#sparkle"/></g></g>
+  <rect x="0" y="0" width="880" height="392" rx="26" fill="url(#bgGrad)"/>
+  <ellipse cx="440.0" cy="596" rx="686" ry="282" fill="url(#horizonGlow)"/>
+  <path d="M44,365 Q440.0,298 836,365" fill="none" stroke="#35D6FF" stroke-opacity=".24" stroke-width="2"/>
+  <rect x="1.5" y="1.5" width="877" height="389" rx="24.5" fill="none" stroke="#35D6FF" stroke-opacity="0.22" stroke-width="3"/>
+  <g>
+    <g transform="translate(651,144)"><g class="stA"><circle cx="0" cy="0" r="1.8" fill="#35D6FF" opacity="0.79"/></g></g>
+    <g transform="translate(771,347)"><g class="stB"><circle cx="0" cy="0" r="2.0" fill="#FFFFFF" opacity="0.37"/></g></g>
+    <g transform="translate(678,40)"><g class="stC"><circle cx="0" cy="0" r="2.0" fill="#FFFFFF" opacity="0.41"/></g></g>
+    <g transform="translate(403,292)"><g class="stA"><circle cx="0" cy="0" r="1.0" fill="#FFFFFF" opacity="0.49"/></g></g>
+    <g transform="translate(762,124)"><g class="stB"><circle cx="0" cy="0" r="1.4" fill="#35D6FF" opacity="0.45"/></g></g>
+    <g transform="translate(798,213)"><g class="stC"><circle cx="0" cy="0" r="1.1" fill="#FFFFFF" opacity="0.79"/></g></g>
+    <g transform="translate(156,330)"><g class="stA"><circle cx="0" cy="0" r="1.6" fill="#FFFFFF" opacity="0.42"/></g></g>
+    <g transform="translate(15,16)"><g class="stB"><circle cx="0" cy="0" r="1.2" fill="#FFFFFF" opacity="0.47"/></g></g>
+    <g transform="translate(183,99)"><g class="stC"><circle cx="0" cy="0" r="1.2" fill="#35D6FF" opacity="0.88"/></g></g>
+    <g transform="translate(566,361)"><g class="stA"><circle cx="0" cy="0" r="1.7" fill="#FFFFFF" opacity="0.45"/></g></g>
+    <g transform="translate(721,114)"><g class="stB"><circle cx="0" cy="0" r="2.1" fill="#FFFFFF" opacity="0.84"/></g></g>
+    <g transform="translate(319,25)"><g class="stC"><circle cx="0" cy="0" r="1.3" fill="#FFFFFF" opacity="0.44"/></g></g>
+    <g transform="translate(163,149)"><g class="stA"><circle cx="0" cy="0" r="1.0" fill="#35D6FF" opacity="0.52"/></g></g>
+    <g transform="translate(631,314)"><g class="stB"><circle cx="0" cy="0" r="0.9" fill="#FFFFFF" opacity="0.72"/></g></g>
+    <g transform="translate(360,47)"><g class="stC"><circle cx="0" cy="0" r="1.3" fill="#FFFFFF" opacity="0.8"/></g></g>
+    <g transform="translate(506,370)"><g class="stA"><circle cx="0" cy="0" r="1.3" fill="#FFFFFF" opacity="0.61"/></g></g>
+    <g transform="translate(735,104)"><g class="stB"><circle cx="0" cy="0" r="1.0" fill="#35D6FF" opacity="0.89"/></g></g>
+    <g transform="translate(37,197)"><g class="stC"><circle cx="0" cy="0" r="1.9" fill="#FFFFFF" opacity="0.36"/></g></g>
+    <g transform="translate(820,228)"><g class="stA"><circle cx="0" cy="0" r="1.3" fill="#FFFFFF" opacity="0.67"/></g></g>
+    <g transform="translate(23,245)"><g class="stB"><circle cx="0" cy="0" r="1.0" fill="#FFFFFF" opacity="0.45"/></g></g>
+    <g transform="translate(215,74)"><g class="stC"><circle cx="0" cy="0" r="1.8" fill="#35D6FF" opacity="0.86"/></g></g>
+    <g transform="translate(551,142)"><g class="stA"><circle cx="0" cy="0" r="1.8" fill="#FFFFFF" opacity="0.41"/></g></g>
+    <g transform="translate(780,202)"><g class="stB"><circle cx="0" cy="0" r="1.9" fill="#FFFFFF" opacity="0.37"/></g></g>
+    <g transform="translate(107,120)"><g class="stC"><circle cx="0" cy="0" r="1.3" fill="#FFFFFF" opacity="0.69"/></g></g>
+    <g transform="translate(165,188)"><g class="stA"><circle cx="0" cy="0" r="1.2" fill="#35D6FF" opacity="0.74"/></g></g>
+    <g transform="translate(108,173)"><g class="stB"><circle cx="0" cy="0" r="1.7" fill="#FFFFFF" opacity="0.52"/></g></g>
   </g>
-  <circle cx="148" cy="140" r="104" fill="url(#ringGlow)" class="glowPulse"/>
-  <circle cx="148" cy="140" r="86" fill="#0E2A4D" stroke="#35D6FF" stroke-opacity="0.95" stroke-width="3" filter="url(#softGlow)"/>
-  <g transform="translate(148,140)"><g class="ringDash"><circle cx="0" cy="0" r="95" fill="none" stroke="#FFD54A" stroke-opacity="0.65" stroke-width="2" stroke-dasharray="3 13" stroke-linecap="round"/></g></g>
-  <g transform="translate(138,156) scale(1.0)">
+  <text x="34" y="44" fill="#9FB8D6" font-size="13" font-weight="600" letter-spacing="2.0" class="m">CODE PET &#183; @MUZRAFATIMA</text>
+  <rect x="739" y="28" width="107" height="25" rx="12.5" fill="#4ADE80" fill-opacity=".17" stroke="#4ADE80" stroke-opacity=".6" stroke-width="1.2"/>
+  <text x="792.3" y="45" fill="#4ADE80" font-size="11.5" font-weight="700" text-anchor="middle" letter-spacing="1.0" class="m">STREAK 1/13</text>
+  <g transform="translate(440,186) scale(0.95)">
     <g class="cat">
-      <g class="tail">
-        <path d="M20,30 C44,36 62,28 68,10 C73,-6 66,-20 54,-23 C44,-25 36,-18 36,-9
-                 C36,-2 41,3 47,3 C51,3 54,1 55,-3 C57,9 46,19 22,17 Z"
-              fill="url(#tailGrad)" stroke="#E4C89E" stroke-width="1.6" stroke-linejoin="round"/>
-        <path d="M62,-13 C67,-6 66,4 61,10" fill="none" stroke="#E4C89E"
-              stroke-width="1.4" stroke-linecap="round" stroke-opacity=".75"/>
-        <path d="M52,-19 C58,-16 61,-10 61,-4" fill="none" stroke="#FFFBF2"
-              stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/>
-      </g>
       <g class="earL">
-        <path d="M-33,-48 C-38,-66 -35,-82 -28,-85 C-21,-82 -14,-68 -11,-54 Z"
-              fill="url(#furGrad)" stroke="#E4C89E" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M-30,-52 C-33,-65 -30,-75 -26,-77 C-22,-74 -18,-65 -16,-56 Z" fill="#FF9FB2" opacity=".8"/>
+        <path d="M-40,-24 C-46,-44 -40,-57 -30,-56 C-23,-54 -18,-43 -15,-32 Z"
+              fill="#45BCF0" stroke="#1878A8" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M-36,-29 C-40,-42 -35,-50 -30,-49 C-26,-47 -23,-40 -21,-34 Z"
+              fill="#7FD9FB" opacity=".95"/>
       </g>
       <g class="earR">
-        <path d="M33,-48 C38,-66 35,-82 28,-85 C21,-82 14,-68 11,-54 Z"
-              fill="url(#furGrad)" stroke="#E4C89E" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M30,-52 C33,-65 30,-75 26,-77 C22,-74 18,-65 16,-56 Z" fill="#FF9FB2" opacity=".8"/>
+        <path d="M40,-24 C46,-44 40,-57 30,-56 C23,-54 18,-43 15,-32 Z"
+              fill="#45BCF0" stroke="#1878A8" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M36,-29 C40,-42 35,-50 30,-49 C26,-47 23,-40 21,-34 Z"
+              fill="#7FD9FB" opacity=".95"/>
       </g>
-      <path d="M-30,22 C-30,2 -16,-10 0,-10 C16,-10 30,2 30,22
-               C30,34 24,43 16,46 C12,43 9,46 5,47 C1,48 -3,45 -7,47
-               C-12,49 -17,44 -21,45 C-27,42 -30,32 -30,22 Z"
-            fill="url(#furGrad)" stroke="#E4C89E" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M-11,14 C-6,22 6,22 11,14 C9,26 -9,26 -11,14 Z" fill="#FFFBF2" opacity=".85"/>
-      <ellipse cx="-11" cy="44" rx="8" ry="5.5" fill="#FFFBF2" stroke="#E4C89E" stroke-width="1.4"/>
-      <ellipse cx="11" cy="44" rx="8" ry="5.5" fill="#FFFBF2" stroke="#E4C89E" stroke-width="1.4"/>
-      <path d="M0,-62 C19,-62 34,-50 37,-34 C39,-23 38,-13 33,-6
-               C28,2 15,7 0,7 C-15,7 -28,2 -33,-6
-               C-38,-13 -39,-23 -37,-34 C-34,-50 -19,-62 0,-62 Z"
-            fill="url(#furGrad)" stroke="#E4C89E" stroke-width="1.9" stroke-linejoin="round"/>
-      <path d="M-9,-58 C-5,-66 -1,-67 2,-60 C4,-66 9,-64 10,-58 C5,-61 -3,-61 -9,-58 Z" fill="#FFFBF2"/>
-      <ellipse cx="-22" cy="-16" rx="10.5" ry="7.2" fill="url(#cheekGrad)"/>
-      <ellipse cx="22" cy="-16" rx="10.5" ry="7.2" fill="url(#cheekGrad)"/>
+      <ellipse cx="0" cy="48" rx="40" ry="8" fill="#031120" opacity=".45"/>
+      <path d="M0,-44 C31,-44 53,-24 53,2 C53,28 33,47 0,47
+                C-33,47 -53,28 -53,2 C-53,-24 -31,-44 0,-44 Z"
+            fill="url(#furGrad)" stroke="#1878A8" stroke-width="2.2" stroke-linejoin="round"/>
+      <ellipse cx="-18" cy="-20" rx="16" ry="11" fill="#FFFFFF" opacity=".16"/>
       <g class="eye">
-        <ellipse cx="-13" cy="-28" rx="8.8" ry="9.8" fill="#071A33"/>
-        <ellipse cx="-13" cy="-27" rx="6.8" ry="7.8" fill="url(#irisGrad)"/>
-        <circle cx="-13" cy="-26.5" r="3.5" fill="#06182E"/>
-        <circle cx="-15.7" cy="-30.6" r="2.6" fill="#FFFFFF"/>
-        <circle cx="-10.3" cy="-23.6" r="1.4" fill="#FFFFFF" opacity=".85"/>
+        <ellipse cx="-17" cy="-7" rx="11" ry="12.5" fill="#FFFFFF"/>
+        <ellipse cx="-17" cy="-6" rx="6.6" ry="7.8" fill="#0B2B42"/>
+        <circle cx="-19.6" cy="-10.2" r="3.1" fill="#FFFFFF"/>
+        <circle cx="-14.0" cy="-1.8" r="1.6" fill="#FFFFFF" opacity=".9"/>
       </g>
       <g class="eye">
-        <ellipse cx="13" cy="-28" rx="8.8" ry="9.8" fill="#071A33"/>
-        <ellipse cx="13" cy="-27" rx="6.8" ry="7.8" fill="url(#irisGrad)"/>
-        <circle cx="13" cy="-26.5" r="3.5" fill="#06182E"/>
-        <circle cx="10.3" cy="-30.6" r="2.6" fill="#FFFFFF"/>
-        <circle cx="15.7" cy="-23.6" r="1.4" fill="#FFFFFF" opacity=".85"/>
+        <ellipse cx="17" cy="-7" rx="11" ry="12.5" fill="#FFFFFF"/>
+        <ellipse cx="17" cy="-6" rx="6.6" ry="7.8" fill="#0B2B42"/>
+        <circle cx="14.4" cy="-10.2" r="3.1" fill="#FFFFFF"/>
+        <circle cx="20.0" cy="-1.8" r="1.6" fill="#FFFFFF" opacity=".9"/>
       </g>
-      <path d="M0,-13 L-3.4,-16.4 L3.4,-16.4 Z" fill="#FF9FB2" stroke="#F08097"
-            stroke-width=".7" stroke-linejoin="round"/>
-      <path d="M0,-13 L0,-10 M0,-10 C-2.6,-10 -4.4,-11.6 -4.6,-13.4 M0,-10 C2.6,-10 4.4,-11.6 4.6,-13.4" fill="none" stroke="#C9A77C" stroke-width="1.5" stroke-linecap="round"/>
-      <g stroke="#FFFBF2" stroke-width="1.6" stroke-linecap="round" opacity=".92" fill="none">
-        <path d="M-17,-15 C-28,-18 -37,-18 -46,-16"/>
-        <path d="M-17,-10 C-28,-10 -37,-9 -46,-6"/>
-        <path d="M17,-15 C28,-18 37,-18 46,-16"/>
-        <path d="M17,-10 C28,-10 37,-9 46,-6"/>
-      </g>
+      <ellipse cx="-31" cy="9" rx="11" ry="7" fill="url(#cheekGrad)"/>
+      <ellipse cx="31" cy="9" rx="11" ry="7" fill="url(#cheekGrad)"/>
+      <path d="M-7,10 C-4,14.5 4,14.5 7,10" fill="none" stroke="#1878A8"
+            stroke-width="2.2" stroke-linecap="round"/>
+      <ellipse cx="-17" cy="45" rx="10" ry="6" fill="#45BCF0"
+               stroke="#1878A8" stroke-width="1.6"/>
+      <ellipse cx="17" cy="45" rx="10" ry="6" fill="#45BCF0"
+               stroke="#1878A8" stroke-width="1.6"/>
     </g>
   </g>
-  <text x="286" y="92" fill="#35D6FF" font-size="15" font-weight="600" letter-spacing="3.4" class="f" filter="url(#textGlow)">CODE PET  &#183;  @MuzraFatima</text>
-  <text x="284" y="150" fill="#FFFFFF" font-size="46" font-weight="700" letter-spacing="0.4" class="f">Muzra Fatima</text>
-  <text x="286" y="188" fill="#FFD54A" font-size="21" font-weight="500" letter-spacing="0.6" class="f">Aspiring AI/ML Engineer</text>
-  <g transform="translate(292,214) scale(0.9)" fill="#FF9FB2" opacity=".9"><use href="#paw"/></g>
-  <g transform="translate(320,214) scale(0.9)" fill="#35D6FF" opacity=".9"><use href="#paw"/></g>
-  <g transform="translate(348,214) scale(0.9)" fill="#FFD54A" opacity=".9"><use href="#paw"/></g>
-  <line x1="372" y1="213" x2="828" y2="213" stroke="#9FB8D6" stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round"/>
+  <g>
+    <rect x="232.0" y="262" width="86.0" height="28" rx="14.0" fill="#3572A5" fill-opacity="0.14" stroke="#3572A5" stroke-opacity="0.7" stroke-width="1.3"/>
+    <rect x="246.0" y="271.5" width="9" height="9" rx="2.5" fill="#3572A5"/>
+    <text x="262.0" y="280.3" fill="#3572A5" font-size="12.5" font-weight="600" class="f">Python</text>
+  </g>
+  <g>
+    <rect x="328.0" y="262" width="114.0" height="28" rx="14.0" fill="#f1e05a" fill-opacity="0.14" stroke="#f1e05a" stroke-opacity="0.7" stroke-width="1.3"/>
+    <rect x="342.0" y="271.5" width="9" height="9" rx="2.5" fill="#f1e05a"/>
+    <text x="358.0" y="280.3" fill="#f1e05a" font-size="12.5" font-weight="600" class="f">JavaScript</text>
+  </g>
+  <g>
+    <rect x="452.0" y="262" width="114.0" height="28" rx="14.0" fill="#3178c6" fill-opacity="0.14" stroke="#3178c6" stroke-opacity="0.7" stroke-width="1.3"/>
+    <rect x="466.0" y="271.5" width="9" height="9" rx="2.5" fill="#3178c6"/>
+    <text x="482.0" y="280.3" fill="#3178c6" font-size="12.5" font-weight="600" class="f">TypeScript</text>
+  </g>
+  <g>
+    <rect x="576.0" y="262" width="72.0" height="28" rx="14.0" fill="#e34c26" fill-opacity="0.14" stroke="#e34c26" stroke-opacity="0.7" stroke-width="1.3"/>
+    <rect x="590.0" y="271.5" width="9" height="9" rx="2.5" fill="#e34c26"/>
+    <text x="606.0" y="280.3" fill="#e34c26" font-size="12.5" font-weight="600" class="f">HTML</text>
+  </g>
+  <line x1="34" y1="306" x2="846" y2="306" stroke="#9FB8D6" stroke-opacity=".18" stroke-width="1.4"/>
+  <text x="34" y="348" fill="#FFFFFF" font-size="31" font-weight="700" class="f" font-style="italic">387</text>
+  <text x="89.5" y="348" fill="#9FB8D6" font-size="14" font-weight="500" class="f">contributions this year &#183; young</text>
+  <text x="34" y="372" fill="#9FB8D6" font-size="11.5" font-weight="400" class="m" opacity=".75">10/52 active weeks to go vivid</text>
+  <text x="846" y="328" fill="#9FB8D6" font-size="10.5" font-weight="600" text-anchor="end" letter-spacing="1.2" class="m">STREAK 1/13 WEEKS</text>
+  <rect x="591" y="340" width="15" height="15" rx="3.5" fill="#35D6FF" fill-opacity="0.95"/>
+  <rect x="611" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="631" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="651" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="671" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="691" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="711" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="731" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="751" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="771" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="791" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="811" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
+  <rect x="831" y="340" width="15" height="15" rx="3.5" fill="#13304F" fill-opacity="1"/>
 </svg>

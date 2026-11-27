@@ -111,15 +111,22 @@ CONTACT = [
 QUERY = """
 query($login:String!){
   user(login:$login){
-    name login
+    name login bio avatarUrl
+    followers{ totalCount }
     contributionsCollection{
       contributionCalendar{
         totalContributions
         weeks{ contributionDays{ date contributionCount } }
       }
     }
-    repositories(first:100, ownerAffiliations:OWNER, isFork:false){
-      nodes{ languages(first:10){ edges{ size node{ name color } } } }
+    repositories(first:100, ownerAffiliations:OWNER, isFork:false,
+                 orderBy:{field:PUSHED_AT, direction:DESC}){
+      totalCount
+      nodes{
+        name description stargazerCount forkCount pushedAt
+        primaryLanguage{ name color }
+        languages(first:10){ edges{ size node{ name color } } }
+      }
     }
   }
 }
@@ -163,13 +170,37 @@ def fetch() -> dict:
 
 def summarise(user: dict) -> dict:
     cal = user["contributionsCollection"]["contributionCalendar"]
-    days = [d for w in cal["weeks"] for d in w["contributionDays"]]
+    weeks_all = cal["weeks"]
+    days = [d for w in weeks_all for d in w["contributionDays"]]
     total = cal["totalContributions"]
 
+    def week_sum(w):
+        return sum(d["contributionCount"] for d in w["contributionDays"])
+
     last7 = sum(d["contributionCount"] for d in days[-7:])
-    weeks = cal["weeks"][-13:]
-    week_active = [sum(d["contributionCount"] for d in w["contributionDays"]) > 0
-                   for w in weeks]
+
+    # Last 13 weeks, as the meter on the banner shows them.
+    week_active = [week_sum(w) > 0 for w in weeks_all[-13:]]
+
+    # Streak = consecutive active weeks counting back from the newest week.
+    streak = 0
+    for w in reversed(weeks_all):
+        if week_sum(w) > 0:
+            streak += 1
+        else:
+            break
+    streak_13 = min(streak, 13)
+
+    # Active weeks across the year; a full 52 is what "vivid" means.
+    active_52 = sum(1 for w in weeks_all[-52:] if week_sum(w) > 0)
+
+    # "Fed in a row": consecutive days with at least one contribution.
+    fed = 0
+    for d in reversed(days):
+        if d["contributionCount"] > 0:
+            fed += 1
+        else:
+            break
 
     # pet stage from yearly contributions
     if total < 50:
@@ -177,9 +208,9 @@ def summarise(user: dict) -> dict:
     elif total < 200:
         stage, pose, label = "kitten", "playing", "Kitten"
     elif total < 500:
-        stage, pose, label = "young", "sitting", "Young cat"
+        stage, pose, label = "young", "sitting", "Young"
     else:
-        stage, pose, label = "adult", "sitting", "Adult cat"
+        stage, pose, label = "adult", "sitting", "Adult"
 
     mood = "sleepy" if last7 == 0 else "happy"
     if mood == "sleepy":
@@ -191,17 +222,34 @@ def summarise(user: dict) -> dict:
             key = (e["node"]["name"], e["node"]["color"] or T.MUTED)
             langs[key] = langs.get(key, 0) + e["size"]
     tot = sum(langs.values()) or 1
-    top = sorted(langs.items(), key=lambda kv: -kv[1])[:6]
     top_langs = [{"name": k[0], "color": k[1], "pct": 100.0 * v / tot}
-                 for k, v in top]
+                 for k, v in sorted(langs.items(), key=lambda kv: -kv[1])[:5]]
+
+    repos = [{"name": r["name"],
+              "desc": (r["description"] or "").strip(),
+              "stars": r["stargazerCount"], "forks": r["forkCount"],
+              "lang": (r["primaryLanguage"] or {}).get("name") or "",
+              "lang_color": (r["primaryLanguage"] or {}).get("color") or T.MUTED}
+             for r in user["repositories"]["nodes"]
+             if r["name"].lower() != LOGIN.lower()]
+
+    # 26-week care log grid, newest last
+    care = [[d["contributionCount"] for d in w["contributionDays"]]
+            for w in weeks_all[-26:]]
 
     nz = [d for d in days if d["contributionCount"] > 0]
     return {
+        "name": user.get("name") or LOGIN,
+        "bio": (user.get("bio") or "").strip(),
+        "followers": user["followers"]["totalCount"],
+        "repo_count": user["repositories"]["totalCount"],
+        "stars": sum(r["stars"] for r in repos),
         "total": total, "last7": last7, "mood": mood, "stage": stage,
         "pose": pose, "stage_label": label,
         "week_active": week_active,
         "weeks_active": sum(week_active),
-        "langs": top_langs,
+        "streak": streak_13, "active_52": active_52, "fed": fed,
+        "langs": top_langs, "repos": repos, "care": care,
         "last_day": nz[-1]["date"] if nz else None,
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
@@ -216,29 +264,182 @@ def write(name: str, body: str) -> Path:
     return p
 
 
-def hero() -> str:
-    h = 280
-    s = T.svg_open(W, h, "Code Pet. Muzra Fatima, Aspiring AI/ML Engineer",
-                   "A fluffy cream cat mascot with big sparkly cyan eyes, pink cheeks, "
-                   "upright ears and a bushy tail, floating inside a glowing cyan ring "
-                   "on a deep navy starfield, beside the heading CODE PET at MuzraFatima, "
-                   "the name Muzra Fatima, and the title Aspiring AI/ML Engineer.")
-    s += T.panel(W, h, 28)
-    s += T.stars(W, h, 13, seed=7, avoid=(44, 36, 208, 208))
-    s += (f'  <circle cx="148" cy="140" r="104" fill="url(#ringGlow)" class="glowPulse"/>\n'
-          f'  <circle cx="148" cy="140" r="86" fill="{T.CARD}" stroke="{T.CYAN}" '
-          f'stroke-opacity="0.95" stroke-width="3" filter="url(#softGlow)"/>\n'
-          f'  <g transform="translate(148,140)"><g class="ringDash">'
-          f'<circle cx="0" cy="0" r="95" fill="none" stroke="{T.YELLOW}" stroke-opacity="0.65" '
-          f'stroke-width="2" stroke-dasharray="3 13" stroke-linecap="round"/></g></g>\n')
-    s += T.cat("sitting", "happy", 1.0, 138, 156)
-    s += T.text(286, 92, "CODE PET  ·  @" + LOGIN, 15, T.CYAN, "600",
-                spacing=3.4, extra=' filter="url(#textGlow)"')
-    s += T.text(284, 150, "Muzra Fatima", 46, T.TEXT, "700", spacing=0.4)
-    s += T.text(286, 188, "Aspiring AI/ML Engineer", 21, T.YELLOW, "500", spacing=0.6)
-    s += T.paw_row(292, 214)
-    s += (f'  <line x1="372" y1="213" x2="828" y2="213" stroke="{T.MUTED}" '
-          f'stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round"/>\n')
+def hero(d: dict) -> str:
+    """The Code Pet banner: pet, streak badge, languages, contributions."""
+    h = 392
+    langs = d["langs"][:4]
+
+    s = T.svg_open(
+        W, h, f"Code Pet. {d['name']}, @{LOGIN}",
+        f"A round blue cat mascot with big eyes and pink cheeks sitting on a "
+        f"starfield. Streak {d['streak']} of 13 weeks. {d['total']} contributions "
+        f"this year, stage {d['stage_label'].lower()}. "
+        f"{d['active_52']} of 52 weeks active. Top languages: "
+        + ", ".join(x["name"] for x in langs) + ".")
+    s += T.panel(W, h, 26, horizon=True)
+    s += T.star_dots(W, h, 26, seed=5, avoid=(340, 96, 200, 170))
+
+    s += T.text(34, 44, f"CODE PET · @{LOGIN.upper()}", 13, T.MUTED, "600",
+                spacing=2.0, mono=True)
+
+    badge = f"STREAK {d['streak']}/13"
+    bw = 26 + len(badge) * 7.4
+    s += (f'  <rect x="{W - 34 - bw:.0f}" y="28" width="{bw:.0f}" height="25" rx="12.5" '
+          f'fill="{T.GREEN}" fill-opacity=".17" stroke="{T.GREEN}" stroke-opacity=".6" '
+          f'stroke-width="1.2"/>\n')
+    s += T.text(W - 34 - bw / 2, 45, badge, 11.5, T.GREEN, "700",
+                anchor="middle", spacing=1.0, mono=True)
+
+    s += T.cat(d["pose"], d["mood"], 0.95, 440,
+               186 if d["pose"] != "sleeping" else 178)
+
+    # language chips, centred under the pet
+    widths = [T.badge_pill(0, 0, x["name"], x["color"])[1] for x in langs]
+    cx = (W - (sum(widths) + 10 * (len(widths) - 1))) / 2
+    for x, wpx in zip(langs, widths):
+        s += T.badge_pill(cx, 262, x["name"], x["color"])[0]
+        cx += wpx + 10
+
+    s += (f'  <line x1="34" y1="306" x2="{W - 34}" y2="306" stroke="{T.MUTED}" '
+          f'stroke-opacity=".18" stroke-width="1.4"/>\n')
+
+    num = f"{d['total']:,}"
+    s += T.text(34, 348, num, 31, T.TEXT, "700",
+                extra=' font-style="italic"')
+    s += T.text(34 + len(num) * 18.5, 348,
+                f"contributions this year · {d['stage_label'].lower()}",
+                14, T.MUTED, "500")
+    s += T.text(34, 372, f"{d['active_52']}/52 active weeks to go vivid",
+                11.5, T.MUTED, "400", mono=True, extra=' opacity=".75"')
+
+    n, sq, gap = 13, 15, 5
+    total = n * sq + (n - 1) * gap
+    sx, sy = W - 34 - total, 340
+    s += T.text(W - 34, 328, f"STREAK {d['streak']}/13 WEEKS", 10.5,
+                T.MUTED, "600", anchor="end", spacing=1.2, mono=True)
+    # The squares are the streak meter, so they must agree with the label:
+    # the first `streak` of 13 are filled, not a scatter of active weeks.
+    for i in range(n):
+        on = i < d["streak"]
+        s += (f'  <rect x="{sx + i * (sq + gap)}" y="{sy}" width="{sq}" height="{sq}" '
+              f'rx="3.5" fill="{T.CYAN if on else "#13304F"}" '
+              f'fill-opacity="{0.95 if on else 1}"/>\n')
+    return s + T.svg_close()
+
+
+def owner(d: dict) -> str:
+    """The PET OWNER card."""
+    h = 186
+    bio = d["bio"] or "AI/ML Engineer"
+    # wrap the bio to two lines without inventing any words
+    words, lines, cur = bio.split(), [], ""
+    for w in words:
+        if len(cur) + len(w) + 1 > 62:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = (cur + " " + w).strip()
+    if cur:
+        lines.append(cur)
+    lines = lines[:2]
+
+    s = T.svg_open(W, h, "Pet owner: " + d["name"],
+                   f"Pet owner card for {d['name']}. {bio} "
+                   f"{d['followers']} followers, {d['repo_count']} repositories, "
+                   f"{d['stars']} stars.")
+    s += T.panel(W, h, 22)
+    s += T.star_dots(W, h, 7, seed=17, avoid=(24, 24, 700, 140))
+    s += T.text(34, 46, "PET OWNER", 11.5, T.CYAN, "700", spacing=2.2, mono=True)
+    s += T.text(34, 84, d["name"], 27, T.TEXT, "700")
+    for i, ln in enumerate(lines):
+        s += T.text(34, 112 + i * 21, ln, 13.5, T.MUTED, "400")
+    s += T.text(34, 160,
+                f"{d['followers']} followers  ·  {d['repo_count']} repositories"
+                f"  ·  {d['stars']} stars", 12, T.MUTED, "500", mono=True)
+    s += (f'  <circle cx="{W - 94}" cy="93" r="46" fill="{T.GREEN}" fill-opacity=".18" '
+          f'stroke="{T.GREEN}" stroke-opacity=".55" stroke-width="2"/>\n')
+    s += T.cat("sitting", d["mood"], 0.42, W - 94, 104)
+    return s + T.svg_close()
+
+
+def toy(idx: int, repo: dict, tagline: str) -> str:
+    """A TOY card: one repository, with stars, forks and language."""
+    h = 148
+    s = T.svg_open(W, h, f"Toy {idx:02d}: {repo['name']}",
+                   f"Project card {idx} for {repo['name']}. {tagline} "
+                   f"{repo['stars']} stars, {repo['forks']} forks, "
+                   f"language {repo['lang'] or 'not set'}.")
+    s += T.panel(W, h, 20)
+    s += T.star_dots(W, h, 5, seed=idx * 13 + 3, avoid=(24, 20, 700, 108))
+    s += T.text(32, 42, f"TOY {idx:02d}", 11, T.CYAN, "700", spacing=2.2, mono=True)
+    s += T.text(32, 76, repo["name"], 21, T.TEXT, "700", mono=True)
+    s += T.text(32, 102, tagline, 13.5, T.MUTED, "400")
+    s += T.text(32, 130, f"★ {repo['stars']}     ⑂ {repo['forks']}",
+                12.5, T.MUTED, "600", mono=True)
+    if repo["lang"]:
+        s += (f'  <rect x="150" y="121" width="10" height="10" rx="2.5" '
+              f'fill="{repo["lang_color"]}"/>\n')
+        s += T.text(168, 130, repo["lang"], 12.5, T.MUTED, "600", mono=True)
+    s += T.cat(["sitting", "playing", "peeking", "sleeping"][(idx - 1) % 4],
+               "happy", 0.40, W - 92, 80)
+    return s + T.svg_close()
+
+
+def eats(d: dict) -> str:
+    """WHAT IT EATS: language breakdown bars."""
+    rows = d["langs"]
+    h = 92 + len(rows) * 32 + 16
+    s = T.svg_open(W, h, "What it eats: language breakdown",
+                   "Language breakdown by bytes across owned repositories: " +
+                   ", ".join(f"{r['name']} {r['pct']:.0f} percent" for r in rows))
+    s += T.panel(W, h, 22)
+    s += T.text(34, 46, "WHAT IT EATS", 11.5, T.CYAN, "700", spacing=2.2, mono=True)
+    bar_x, bar_w = 232, 500
+    for i, r in enumerate(rows):
+        y = 78 + i * 32
+        s += (f'  <rect x="34" y="{y}" width="11" height="11" rx="2.8" '
+              f'fill="{r["color"]}"/>\n')
+        s += T.text(56, y + 10, r["name"], 13.5, T.TEXT, "600")
+        s += (f'  <rect x="{bar_x}" y="{y}" width="{bar_w}" height="11" rx="5.5" '
+              f'fill="#13304F"/>\n')
+        s += (f'  <rect x="{bar_x}" y="{y}" width="{max(8.0, bar_w * r["pct"] / 100):.1f}" '
+              f'height="11" rx="5.5" fill="{r["color"]}"/>\n')
+        s += T.text(W - 34, y + 10, f"{r['pct']:.0f}%", 12.5, T.MUTED, "600",
+                    anchor="end", mono=True)
+    return s + T.svg_close()
+
+
+def carelog(d: dict) -> str:
+    """CARE LOG: a 26-week contribution heatmap."""
+    care = d["care"]
+    cell, gap = 13, 4
+    grid_w = len(care) * (cell + gap) - gap
+    h = 70 + 7 * (cell + gap) + 40
+    s = T.svg_open(W, h, "Care log: the last 26 weeks",
+                   f"A heatmap of contributions over the last 26 weeks. "
+                   f"Fed in a row: {d['fed']} day{'s' if d['fed'] != 1 else ''}.")
+    s += T.panel(W, h, 22)
+    s += T.text(34, 46, "CARE LOG · 26 WEEKS", 11.5, T.CYAN, "700",
+                spacing=2.2, mono=True)
+    peak = max((max(w) for w in care if w), default=0) or 1
+    for xi, week in enumerate(care):
+        for yi, n in enumerate(week):
+            x = 34 + xi * (cell + gap)
+            y = 68 + yi * (cell + gap)
+            if n == 0:
+                fill, op = "#13304F", "1"
+            else:
+                op = f"{min(1.0, 0.32 + 0.68 * (n / peak)):.2f}"
+                fill = T.CYAN if n < peak * 0.6 else T.GREEN
+            s += (f'  <rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" '
+                  f'fill="{fill}" fill-opacity="{op}"/>\n')
+    s += T.text(W - 34, 62, "FED IN A ROW", 10.5, T.MUTED, "600",
+                anchor="end", spacing=1.6, mono=True)
+    s += T.text(W - 34, 92, f"{d['fed']} day{'s' if d['fed'] != 1 else ''}",
+                24, T.TEXT, "700", anchor="end")
+    s += T.text(34, h - 20,
+                "A filled square is a day with at least one contribution.",
+                11.5, T.MUTED, "400", extra=' opacity=".75"')
     return s + T.svg_close()
 
 
@@ -460,18 +661,34 @@ def main() -> int:
     print(f"  {data['total']} contributions, stage={data['stage']}, "
           f"mood={data['mood']}, {data['weeks_active']}/13 weeks active")
 
-    written = [write("hero.svg", hero()),
+    written = [write("hero.svg", hero(data)),
+               write("owner.svg", owner(data)),
                write("about.svg", about()),
                write("tech.svg", tech())]
-    for p in FLAGSHIP:
-        written.append(write(f"project-{p['slug']}.svg", project(p, True)))
-    for p in MORE:
-        written.append(write(f"project-{p['slug']}.svg", project(p, False)))
-    written += [write("stats-contributions.svg", stats_contributions(data)),
-                write("stats-languages.svg", stats_languages(data)),
-                write("stats-streak.svg", stats_streak(data)),
+
+    # TOY cards, one per project, in the order the README presents them.
+    by_name = {r["name"].lower(): r for r in data["repos"]}
+    for i, p in enumerate(FLAGSHIP + MORE, start=1):
+        repo_key = p["url"].rsplit("/", 1)[-1].lower()
+        repo = by_name.get(repo_key, {"name": repo_key, "stars": 0, "forks": 0,
+                                      "lang": "", "lang_color": T.MUTED})
+        repo = dict(repo, name=p["name"])
+        written.append(write(f"toy-{i:02d}.svg", toy(i, repo, p["tag"])))
+        p["asset"] = f"toy-{i:02d}.svg"
+
+    written += [write("eats.svg", eats(data)),
+                write("carelog.svg", carelog(data)),
                 write("achievements.svg", achievements()),
                 write("contact.svg", contact())]
+
+    # Files from earlier layouts that the new design no longer uses.
+    for stale in ["stats-contributions.svg", "stats-streak.svg",
+                  "stats-languages.svg"] + \
+                 [f"project-{p['slug']}.svg" for p in FLAGSHIP + MORE]:
+        old = ASSETS / stale
+        if old.exists():
+            old.unlink()
+            print(f"  removed superseded {stale}")
 
     print(f"\nWrote {len(written)} SVGs to {ASSETS}")
     print("Validating...")

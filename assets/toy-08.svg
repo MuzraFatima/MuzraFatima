@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 148" width="880" height="148" role="img" aria-labelledby="t d">
+  <title id="t">Toy 08: PhoneCheck</title>
+  <desc id="d">Project card 8 for PhoneCheck. Smartphone-addiction risk prediction across nine models 0 stars, 0 forks, language JavaScript.</desc>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#061629"/>
+      <stop offset="55%" stop-color="#071A33"/>
+      <stop offset="100%" stop-color="#0B2946"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#35D6FF"/>
+      <stop offset="55%" stop-color="#7FE4FF"/>
+      <stop offset="100%" stop-color="#FFD54A"/>
+    </linearGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#35D6FF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="58%" stop-color="#35D6FF" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#35D6FF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#35D6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="furGrad" cx="34%" cy="26%" r="82%">
+      <stop offset="0%" stop-color="#7FD9FB"/>
+      <stop offset="58%" stop-color="#45BCF0"/>
+      <stop offset="100%" stop-color="#1F93CC"/>
+    </radialGradient>
+    <radialGradient id="bellyGrad" cx="50%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D6F2FE"/>
+    </radialGradient>
+    <radialGradient id="cheekGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9FB2" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FF9FB2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="sparkle" d="M0,-6 Q1.1,-1.1 6,0 Q1.1,1.1 0,6 Q-1.1,1.1 -6,0 Q-1.1,-1.1 0,-6 Z"/>
+    <g id="paw">
+      <ellipse cx="0" cy="2.6" rx="4.6" ry="3.7"/>
+      <ellipse cx="-4.4" cy="-2.6" rx="1.9" ry="2.5"/>
+      <ellipse cx="-1.5" cy="-4.4" rx="1.9" ry="2.5"/>
+      <ellipse cx="1.5" cy="-4.4" rx="1.9" ry="2.5"/>
+      <ellipse cx="4.4" cy="-2.6" rx="1.9" ry="2.5"/>
+    </g>
+    <g id="starBadge">
+      <path d="M0,-11 L3.2,-3.6 L11,-3.1 L5.1,2 L6.9,9.7 L0,5.6 L-6.9,9.7 L-5.1,2 L-11,-3.1 L-3.2,-3.6 Z"/>
+    </g>
+  </defs>
+  <style>
+    .f { font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+    .m { font-family: ui-monospace, SFMono-Regular, 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+    .cat { animation: float 4.6s ease-in-out infinite; }
+    .tail { transform-box: fill-box; transform-origin: 10% 85%; animation: swish 3.4s ease-in-out infinite; }
+    .earL { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchL 7s ease-in-out infinite; }
+    .earR { transform-box: fill-box; transform-origin: 50% 100%; animation: twitchR 7s ease-in-out infinite; }
+    .eye { transform-box: fill-box; transform-origin: 50% 50%; animation: blink 5.8s ease-in-out infinite; }
+    .ringDash { animation: spin 30s linear infinite; }
+    .ringDot { animation: spin 22s linear infinite; }
+    .glowPulse { transform-box: fill-box; transform-origin: 50% 50%; animation: pulse 4.6s ease-in-out infinite; }
+    .breathe { transform-box: fill-box; transform-origin: 50% 90%; animation: breathe 3.8s ease-in-out infinite; }
+    .zz { transform-box: fill-box; transform-origin: 50% 100%; animation: zzz 3.4s ease-in-out infinite; }
+    .wave { transform-box: fill-box; transform-origin: 22% 88%; animation: wave 1.9s ease-in-out infinite; }
+    .stA, .stB, .stC { transform-box: fill-box; transform-origin: 50% 50%;
+                        animation: twinkle 3.6s ease-in-out infinite; }
+    .stB { animation-duration: 4.4s; animation-delay: -1.2s; }
+    .stC { animation-duration: 5.2s; animation-delay: -2.4s; }
+
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes swish { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(11deg); } }
+    @keyframes blink { 0%,91%,100% { transform: scaleY(1); } 94% { transform: scaleY(0.08); } 97% { transform: scaleY(1); } }
+    @keyframes twitchL { 0%,86%,100% { transform: rotate(0); } 90% { transform: rotate(8deg); } 94% { transform: rotate(-3deg); } }
+    @keyframes twitchR { 0%,88%,100% { transform: rotate(0); } 92% { transform: rotate(-9deg); } 96% { transform: rotate(3deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100% { opacity: .5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+    @keyframes zzz { 0% { opacity: 0; transform: translateY(4px) scale(.8); }
+                      35% { opacity: 1; }
+                      100% { opacity: 0; transform: translateY(-14px) scale(1.15); } }
+    @keyframes wave { 0%,100% { transform: rotate(-18deg); } 50% { transform: rotate(12deg); } }
+    @keyframes twinkle { 0%,100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cat, .tail, .earL, .earR, .eye, .ringDash, .ringDot, .glowPulse,
+      .breathe, .zz, .wave, .stA, .stB, .stC { animation: none !important; }
+    }
+  </style>
+  <rect x="0" y="0" width="880" height="148" rx="20" fill="url(#bgGrad)"/>
+  <rect x="1.5" y="1.5" width="877" height="145" rx="18.5" fill="none" stroke="#35D6FF" stroke-opacity="0.22" stroke-width="3"/>
+  <g>
+    <g transform="translate(758,98)"><g class="stA"><circle cx="0" cy="0" r="1.4" fill="#35D6FF" opacity="0.77"/></g></g>
+    <g transform="translate(856,44)"><g class="stB"><circle cx="0" cy="0" r="1.0" fill="#FFFFFF" opacity="0.52"/></g></g>
+    <g transform="translate(811,19)"><g class="stC"><circle cx="0" cy="0" r="1.9" fill="#FFFFFF" opacity="0.75"/></g></g>
+    <g transform="translate(759,134)"><g class="stA"><circle cx="0" cy="0" r="1.3" fill="#FFFFFF" opacity="0.48"/></g></g>
+    <g transform="translate(832,75)"><g class="stB"><circle cx="0" cy="0" r="1.5" fill="#35D6FF" opacity="0.79"/></g></g>
+  </g>
+  <text x="32" y="42" fill="#35D6FF" font-size="11" font-weight="700" letter-spacing="2.2" class="m">TOY 08</text>
+  <text x="32" y="76" fill="#FFFFFF" font-size="21" font-weight="700" class="m">PhoneCheck</text>
+  <text x="32" y="102" fill="#9FB8D6" font-size="13.5" font-weight="400" class="f">Smartphone-addiction risk prediction across nine models</text>
+  <text x="32" y="130" fill="#9FB8D6" font-size="12.5" font-weight="600" class="m">&#9733; 0     &#9282; 0</text>
+  <rect x="150" y="121" width="10" height="10" rx="2.5" fill="#f1e05a"/>
+  <text x="168" y="130" fill="#9FB8D6" font-size="12.5" font-weight="600" class="m">JavaScript</text>
+  <g transform="translate(788,80) scale(0.4)">
+    <g class="cat">
+      <g class="breathe">
+        <ellipse cx="0" cy="14" rx="56" ry="34" fill="url(#furGrad)"
+                 stroke="#1878A8" stroke-width="2.1"/>
+        <ellipse cx="4" cy="24" rx="30" ry="17" fill="url(#bellyGrad)" opacity=".85"/>
+        <path d="M50,24 C70,18 76,2 66,-6 C58,-12 49,-8 48,0 C47,7 52,11 57,10
+                 C53,18 44,22 36,21 Z" fill="url(#furGrad)" stroke="#1878A8"
+              stroke-width="1.9" stroke-linejoin="round"/>
+        <g transform="translate(-16,-6) scale(.86)">
+          <path d="M-38,-16 C-43,-34 -38,-46 -30,-46 C-23,-44 -18,-33 -15,-22 Z"
+                fill="url(#furGrad)" stroke="#1878A8" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M26,-18 C31,-36 26,-48 18,-48 C11,-46 6,-35 3,-24 Z"
+                fill="url(#furGrad)" stroke="#1878A8" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="-6" cy="2" rx="40" ry="35" fill="url(#furGrad)"
+                   stroke="#1878A8" stroke-width="2.2"/>
+          <ellipse cx="-30" cy="12" rx="10" ry="6.6" fill="url(#cheekGrad)"/>
+          <ellipse cx="18" cy="12" rx="10" ry="6.6" fill="url(#cheekGrad)"/>
+          <path d="M-28,0 C-24,7 -14,7 -10,0" fill="none" stroke="#1878A8"
+                stroke-width="3" stroke-linecap="round"/>
+          <path d="M2,0 C6,7 16,7 20,0" fill="none" stroke="#1878A8"
+                stroke-width="3" stroke-linecap="round"/>
+          <path d="M-5,16 L-8.6,12.2 L-1.4,12.2 Z" fill="#FF9FB2"/>
+        </g>
+      </g>
+      <g class="f" fill="#35D6FF" opacity=".92">
+        <g class="zz"><text x="56" y="-44" font-size="19" font-weight="700">z</text></g>
+        <g class="zz" style="animation-delay:-1.1s"><text x="72" y="-58" font-size="14" font-weight="700">z</text></g>
+        <g class="zz" style="animation-delay:-2.2s"><text x="86" y="-70" font-size="11" font-weight="700">z</text></g>
+      </g>
+    </g>
+  </g>
+</svg>
