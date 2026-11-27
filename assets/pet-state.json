@@ -4,8 +4,8 @@
   "followers": 1,
   "repo_count": 10,
   "stars": 0,
-  "total": 387,
-  "last7": 28,
+  "total": 390,
+  "last7": 31,
   "mood": "happy",
   "stage": "young",
   "pose": "sitting",
@@ -18,27 +18,27 @@
     {
       "name": "Python",
       "color": "#3572A5",
-      "pct": 74.57882740027135
+      "pct": 74.86214055617225
     },
     {
       "name": "JavaScript",
       "color": "#f1e05a",
-      "pct": 14.755916689185998
+      "pct": 14.591465371725192
     },
     {
       "name": "TypeScript",
       "color": "#3178c6",
-      "pct": 5.828621167768766
+      "pct": 5.763662517607642
     },
     {
       "name": "HTML",
       "color": "#e34c26",
-      "pct": 2.514149436772296
+      "pct": 2.486129816176745
     },
     {
       "name": "CSS",
       "color": "#663399",
-      "pct": 1.7066238321309484
+      "pct": 1.6876038997529332
     }
   ],
   "repos": [
@@ -271,8 +271,8 @@
     ],
     [
       0,
-      0,
       1,
+      0,
       0,
       0,
       0,
@@ -347,11 +347,11 @@
       0,
       0,
       0,
-      28
+      31
     ]
   ],
   "last_day": "2026-11-27",
-  "generated": "2026-11-27 17:42 UTC",
+  "generated": "2026-11-27 17:48 UTC",
   "week_active": [
     false,
     true,
