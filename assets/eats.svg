@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 268" width="880" height="268" role="img" aria-labelledby="t d">
   <title id="t">What it eats: language breakdown</title>
-  <desc id="d">Language breakdown by bytes across owned repositories: Python 75 percent, JavaScript 15 percent, TypeScript 6 percent, HTML 2 percent, CSS 2 percent</desc>
+  <desc id="d">Language breakdown by bytes across owned repositories: Python 75 percent, JavaScript 14 percent, TypeScript 6 percent, HTML 2 percent, CSS 2 percent</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0.4" y2="1">
       <stop offset="0%" stop-color="#080A11"/>
@@ -103,26 +103,26 @@
   <rect x="34" y="78" width="11" height="11" rx="2.8" fill="#3572A5"/>
   <text x="56" y="88" fill="#FFFFFF" font-size="13.5" font-weight="600" class="f">Python</text>
   <rect x="232" y="78" width="500" height="11" rx="5.5" fill="#13304F"/>
-  <rect x="232" y="78" width="374.3" height="11" rx="5.5" fill="#3572A5"/>
+  <rect x="232" y="78" width="375.8" height="11" rx="5.5" fill="#3572A5"/>
   <text x="846" y="88" fill="#9FB8D6" font-size="12.5" font-weight="600" text-anchor="end" class="m">75%</text>
   <rect x="34" y="110" width="11" height="11" rx="2.8" fill="#f1e05a"/>
   <text x="56" y="120" fill="#FFFFFF" font-size="13.5" font-weight="600" class="f">JavaScript</text>
   <rect x="232" y="110" width="500" height="11" rx="5.5" fill="#13304F"/>
-  <rect x="232" y="110" width="73.0" height="11" rx="5.5" fill="#f1e05a"/>
-  <text x="846" y="120" fill="#9FB8D6" font-size="12.5" font-weight="600" text-anchor="end" class="m">15%</text>
+  <rect x="232" y="110" width="72.1" height="11" rx="5.5" fill="#f1e05a"/>
+  <text x="846" y="120" fill="#9FB8D6" font-size="12.5" font-weight="600" text-anchor="end" class="m">14%</text>
   <rect x="34" y="142" width="11" height="11" rx="2.8" fill="#3178c6"/>
   <text x="56" y="152" fill="#FFFFFF" font-size="13.5" font-weight="600" class="f">TypeScript</text>
   <rect x="232" y="142" width="500" height="11" rx="5.5" fill="#13304F"/>
-  <rect x="232" y="142" width="28.8" height="11" rx="5.5" fill="#3178c6"/>
+  <rect x="232" y="142" width="28.5" height="11" rx="5.5" fill="#3178c6"/>
   <text x="846" y="152" fill="#9FB8D6" font-size="12.5" font-weight="600" text-anchor="end" class="m">6%</text>
   <rect x="34" y="174" width="11" height="11" rx="2.8" fill="#e34c26"/>
   <text x="56" y="184" fill="#FFFFFF" font-size="13.5" font-weight="600" class="f">HTML</text>
   <rect x="232" y="174" width="500" height="11" rx="5.5" fill="#13304F"/>
-  <rect x="232" y="174" width="12.4" height="11" rx="5.5" fill="#e34c26"/>
+  <rect x="232" y="174" width="12.3" height="11" rx="5.5" fill="#e34c26"/>
   <text x="846" y="184" fill="#9FB8D6" font-size="12.5" font-weight="600" text-anchor="end" class="m">2%</text>
   <rect x="34" y="206" width="11" height="11" rx="2.8" fill="#663399"/>
   <text x="56" y="216" fill="#FFFFFF" font-size="13.5" font-weight="600" class="f">CSS</text>
   <rect x="232" y="206" width="500" height="11" rx="5.5" fill="#13304F"/>
-  <rect x="232" y="206" width="8.4" height="11" rx="5.5" fill="#663399"/>
+  <rect x="232" y="206" width="8.3" height="11" rx="5.5" fill="#663399"/>
   <text x="846" y="216" fill="#9FB8D6" font-size="12.5" font-weight="600" text-anchor="end" class="m">2%</text>
 </svg>
